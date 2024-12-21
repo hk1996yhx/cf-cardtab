@@ -89,7 +89,7 @@ const HTML_CONTENT = `
         .fixed-elements {
             /*
             */
-            background: ${headbackground};
+            background: var(--headbackground);
             position: absolute;
             top: 0;
             left: 0;
@@ -112,7 +112,7 @@ const HTML_CONTENT = `
         body {
             /*
             */
-            background: ${bodybackground};
+            background: var(--headbackground);
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -122,7 +122,7 @@ const HTML_CONTENT = `
         #hitokoto {
             /*
             */
-            background: ${colorbackground};
+            background: var(--headbackground);
             color: white;
             padding: 10px;
             /* 阻止文本自动换行 */

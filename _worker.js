@@ -519,7 +519,7 @@ const HTML_CONTENT = `
                     fixedElement.classList.remove('hide'); // 恢复模块
                     content.classList.remove('show'); // 隐藏主内容
                 }
-            }, 200); // 200ms 后执行
+            }, 100); // 100ms 后执行
         });
         // 搜索引擎配置
         const searchEngines = {

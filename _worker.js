@@ -97,7 +97,7 @@ const HTML_CONTENT = `
             height: 105vh;
             /* 初始占满屏幕 */
             z-index: 1000;
-            transition: height 0.6s ease-in-out, opacity 0.4s ease;
+            transition: height 0.6s ease-in-out, opacity 0.6s ease;
             /* 添加平滑动画 */
             opacity: 1;
             /* 初始完全不透明 */

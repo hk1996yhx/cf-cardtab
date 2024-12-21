@@ -1,48 +1,4 @@
-// 随机颜色生成函数
-function generateRandomRGBA() {
-    // 对每个颜色通道分别生成随机数
-    const red = Math.floor(Math.random() * 256);
-    const green = Math.floor(Math.random() * 256);
-    const blue = Math.floor(Math.random() * 256);
-    return 'rgba(' + red + ',' + green + ',' + blue + ',0.7)';
-}
-//随机背景图片选择函数
-function generateRandomBackgroundImage() {
-    // Array of sample image URLs
-    const backgrounds = [
-        'url(https://image.377020945.xyz/file/00b532f864fc091fbcfb5.jpg)',
-        'url(https://image.377020945.xyz/file/06085c6795ad594fa5a43.jpg)',
-        'url(https://image.377020945.xyz/file/0f1aa31aaa841b284c4c2.png)',
-        'url(https://image.377020945.xyz/file/1f49e51aaf3978aff844d.jpg)',
-        'url(https://image.377020945.xyz/file/1f8b152adb232d95b21d2.jpg)',
-        'url(https://image.377020945.xyz/file/20ebbbc1931b1aa464954.png)',
-        'url(https://image.377020945.xyz/file/38953f3a7fdf833f4aed5.jpg)',
-        'url(https://image.377020945.xyz/file/3b372230387c8aa4c65d7.jpg)',
-        'url(https://image.377020945.xyz/file/4f3ebaa42e411279f6bd4.png)',
-        'url(https://image.377020945.xyz/file/585ff8a7a2a95f0b7d28a.png)',
-        'url(https://image.377020945.xyz/file/5d9fcbc55431cca672819.jpg)',
-        'url(https://image.377020945.xyz/file/707997a15fbd5cb84aa68.jpg)',
-        'url(https://image.377020945.xyz/file/73905ceec754b57346ce2.jpg)',
-        'url(https://image.377020945.xyz/file/83d9a02ef82a1835cbddc.png)',
-        'url(https://image.377020945.xyz/file/90d7c8c8559cb5b95deec.png)',
-        'url(https://image.377020945.xyz/file/9aa5380449cd603fade91.png)',
-        'url(https://image.377020945.xyz/file/a517ac3afc91bedbcd6a1.png)',
-        'url(https://image.377020945.xyz/file/aa32fd44af924e90ae2f6.jpg)',
-        'url(https://image.377020945.xyz/file/d38cc4120b1a2ef030c6a.png)',
-        'url(https://image.377020945.xyz/file/d6ea559327b80c307b4c9.png)',
-        'url(https://image.377020945.xyz/file/dd4b000063b3075b6d36a.jpg)',
-        'url(https://image.377020945.xyz/file/e29614f3d15be71097d6f.jpg)',
-        'url(https://image.377020945.xyz/file/ebdc359bebc1e310f4149.jpg)',
-        'url(https://image.377020945.xyz/file/f7153f906745ef4cf3259.png)',
-        // Add more image URLs as needed
-    ];
-    // Choose a random image URL from the array
-    return backgrounds[Math.floor(Math.random() * backgrounds.length)];
-}
-// 动态设置背景
-var bodybackground = generateRandomBackgroundImage();
-var headbackground = generateRandomBackgroundImage();
-var colorbackground = generateRandomRGBA();
+
 const HTML_CONTENT = `
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -498,6 +454,51 @@ const HTML_CONTENT = `
         </div>
     </div>
     <script>
+        // 随机颜色生成函数
+        function generateRandomRGBA() {
+            // 对每个颜色通道分别生成随机数
+            const red = Math.floor(Math.random() * 256);
+            const green = Math.floor(Math.random() * 256);
+            const blue = Math.floor(Math.random() * 256);
+            return 'rgba(' + red + ',' + green + ',' + blue + ',0.7)';
+        }
+        //随机背景图片选择函数
+        function generateRandomBackgroundImage() {
+            // Array of sample image URLs
+            const backgrounds = [
+                'url(https://image.377020945.xyz/file/00b532f864fc091fbcfb5.jpg)',
+                'url(https://image.377020945.xyz/file/06085c6795ad594fa5a43.jpg)',
+                'url(https://image.377020945.xyz/file/0f1aa31aaa841b284c4c2.png)',
+                'url(https://image.377020945.xyz/file/1f49e51aaf3978aff844d.jpg)',
+                'url(https://image.377020945.xyz/file/1f8b152adb232d95b21d2.jpg)',
+                'url(https://image.377020945.xyz/file/20ebbbc1931b1aa464954.png)',
+                'url(https://image.377020945.xyz/file/38953f3a7fdf833f4aed5.jpg)',
+                'url(https://image.377020945.xyz/file/3b372230387c8aa4c65d7.jpg)',
+                'url(https://image.377020945.xyz/file/4f3ebaa42e411279f6bd4.png)',
+                'url(https://image.377020945.xyz/file/585ff8a7a2a95f0b7d28a.png)',
+                'url(https://image.377020945.xyz/file/5d9fcbc55431cca672819.jpg)',
+                'url(https://image.377020945.xyz/file/707997a15fbd5cb84aa68.jpg)',
+                'url(https://image.377020945.xyz/file/73905ceec754b57346ce2.jpg)',
+                'url(https://image.377020945.xyz/file/83d9a02ef82a1835cbddc.png)',
+                'url(https://image.377020945.xyz/file/90d7c8c8559cb5b95deec.png)',
+                'url(https://image.377020945.xyz/file/9aa5380449cd603fade91.png)',
+                'url(https://image.377020945.xyz/file/a517ac3afc91bedbcd6a1.png)',
+                'url(https://image.377020945.xyz/file/aa32fd44af924e90ae2f6.jpg)',
+                'url(https://image.377020945.xyz/file/d38cc4120b1a2ef030c6a.png)',
+                'url(https://image.377020945.xyz/file/d6ea559327b80c307b4c9.png)',
+                'url(https://image.377020945.xyz/file/dd4b000063b3075b6d36a.jpg)',
+                'url(https://image.377020945.xyz/file/e29614f3d15be71097d6f.jpg)',
+                'url(https://image.377020945.xyz/file/ebdc359bebc1e310f4149.jpg)',
+                'url(https://image.377020945.xyz/file/f7153f906745ef4cf3259.png)',
+                // Add more image URLs as needed
+            ];
+            // Choose a random image URL from the array
+            return backgrounds[Math.floor(Math.random() * backgrounds.length)];
+        }
+        // 动态设置背景
+        var bodybackground = generateRandomBackgroundImage();
+        var headbackground = generateRandomBackgroundImage();
+        var colorbackground = generateRandomRGBA();
         // 获取模块元素
         const content = document.querySelector('.content');
         const fixedElement = document.querySelector('.fixed-elements');

@@ -1,4 +1,3 @@
-
 const HTML_CONTENT = `
 <!DOCTYPE html>
 <html lang="zh-CN">
@@ -502,7 +501,7 @@ const HTML_CONTENT = `
         // 获取模块元素
         const content = document.querySelector('.content');
         const fixedElement = document.querySelector('.fixed-elements');
-        element.style.background = headbackground;
+        fixedElement.style.background = headbackground;
         document.body.style.background = bodybackground;
         // 监听滚动事件
         window.addEventListener('scroll', () => {

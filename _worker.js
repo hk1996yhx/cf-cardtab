@@ -97,15 +97,14 @@ const HTML_CONTENT = `
             height: 105vh;
             /* 初始占满屏幕 */
             z-index: 1000;
-            transition: height 0.6s ease-in-out,
-                opacity 0.4s ease;
+            transition: height 0.6s ease-in-out, opacity 0.4s ease;
             /* 添加平滑动画 */
             opacity: 1;
             /* 初始完全不透明 */
         }
         /* 当模块收起时的状态 */
         .fixed-elements.hide {
-            height: 0vh;
+            height: 50vh;
             /* 高度缩为 0 */
             opacity: 0;
             /* 可选：渐隐 */

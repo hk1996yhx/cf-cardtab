@@ -87,7 +87,7 @@ const HTML_CONTENT = `
         /* 全局样式 */
         /* 初始状态 - 模块占满屏幕 */
         .fixed-elements {
-            /* background: ${headbackground}; */
+            background: ${headbackground};
             position: absolute;
             top: 0;
             left: 0;
@@ -109,7 +109,7 @@ const HTML_CONTENT = `
             /* 可选：渐隐 */
         }
         body {
-            /* background: ${bodybackground}; */
+            background: ${bodybackground};
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -117,7 +117,7 @@ const HTML_CONTENT = `
             transition: background-color 0.3s ease;
         }
         #hitokoto {
-            /* background: ${colorbackground}; */
+            background: ${colorbackground};
             color: white;
             padding: 10px;
             /* 阻止文本自动换行 */

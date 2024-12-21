@@ -52,23 +52,54 @@ const HTML_CONTENT = `
     <title>Card Tab</title>
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>⭐</text></svg>">
+    <div class="fixed-elements">
+        <h3>我的导航</h3>
+        <div class="center-content">
+            <!-- 一言模块 -->
+            <p id="hitokoto">
+                <a href="#" id="hitokoto_text"></a>
+            </p>
+            <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+            <!-- 搜索栏 -->
+            <div class="search-container">
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="">
+                    <button id="search-button">🔍</button>
+                </div>
+                <div class="search-engines">
+                    <button class="search-engine" data-engine="baidu">百度</button>
+                    <button class="search-engine" data-engine="bing">必应</button>
+                    <button class="search-engine" data-engine="google">谷歌</button>
+                    <button class="search-engine" data-engine="youtube">YouTube</button>
+                    <button class="search-engine" data-engine="douyin">抖音</button>
+                    <button class="search-engine" data-engine="bilibili">bilibili</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 管理员控制面板 -->
+    <div class="admin-controls">
+        <input type="password" id="admin-password" placeholder="输入密码">
+        <button id="admin-mode-btn" onclick="toggleAdminMode()">设 置</button>
+        <button id="secret-garden-btn" onclick="toggleSecretGarden()">登 录</button>
+    </div>
     <style>
-    /* 全局样式 */
+        /* 全局样式 */
         /* 初始状态 - 模块占满屏幕 */
         .fixed-elements {
-            background: ${headbackground};
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 105vh;
-                /* 初始占满屏幕 */
-                z-index: 1000;
-                transition: height 0.6s ease-in-out,
+            /* background: ${headbackground}; */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 105vh;
+            /* 初始占满屏幕 */
+            z-index: 1000;
+            transition: height 0.6s ease-in-out,
                 opacity 0.4s ease;
-                /* 添加平滑动画 */
-                opacity: 1;
-                /* 初始完全不透明 */
+            /* 添加平滑动画 */
+            opacity: 1;
+            /* 初始完全不透明 */
         }
         /* 当模块收起时的状态 */
         .fixed-elements.hide {
@@ -77,14 +108,8 @@ const HTML_CONTENT = `
             opacity: 0;
             /* 可选：渐隐 */
         }
-        .fixed-elements h3 {
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            margin: 0;
-        }
         body {
-            background: ${bodybackground};
+            /* background: ${bodybackground}; */
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -92,11 +117,17 @@ const HTML_CONTENT = `
             transition: background-color 0.3s ease;
         }
         #hitokoto {
-            background: ${colorbackground};
+            /* background: ${colorbackground}; */
             color: white;
             padding: 10px;
             /* 阻止文本自动换行 */
             white-space: nowrap;
+        }
+        .fixed-elements h3 {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            margin: 0;
         }
         /* 中心内容样式 */
         .center-content {
@@ -431,37 +462,6 @@ const HTML_CONTENT = `
     </style>
 </head>
 <body>
-    <div class="fixed-elements">
-        <h3>我的导航</h3>
-        <div class="center-content">
-            <!-- 一言模块 -->
-            <p id="hitokoto">
-                <a href="#" id="hitokoto_text"></a>
-            </p>
-            <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
-            <!-- 搜索栏 -->
-            <div class="search-container">
-                <div class="search-bar">
-                    <input type="text" id="search-input" placeholder="">
-                    <button id="search-button">🔍</button>
-                </div>
-                <div class="search-engines">
-                    <button class="search-engine" data-engine="baidu">百度</button>
-                    <button class="search-engine" data-engine="bing">必应</button>
-                    <button class="search-engine" data-engine="google">谷歌</button>
-                    <button class="search-engine" data-engine="youtube">YouTube</button>
-                    <button class="search-engine" data-engine="douyin">抖音</button>
-                    <button class="search-engine" data-engine="bilibili">bilibili</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 管理员控制面板 -->
-    <div class="admin-controls">
-        <input type="password" id="admin-password" placeholder="输入密码">
-        <button id="admin-mode-btn" onclick="toggleAdminMode()">设 置</button>
-        <button id="secret-garden-btn" onclick="toggleSecretGarden()">登 录</button>
-    </div>
     <div id="category-directory" style="position: fixed; top: 50px; left: 20px; max-width: 200px;">
         <ul id="directory-list"></ul>
     </div>
@@ -497,7 +497,8 @@ const HTML_CONTENT = `
         <!-- 版权信息 -->
         <div id="copyright" class="copyright">
             <!--请不要删除-->
-            <p>原项目地址: <a href="https://github.com/hmhm2022/Card-Tab" target="_blank">GitHub</a> 本项目地址: <a href="https://github.com/hk1996yhx/cf-cardtab" target="_blank">GitHub</a> 如果喜欢，烦请点个star！</p>
+            <p>原项目地址: <a href="https://github.com/hmhm2022/Card-Tab" target="_blank">GitHub</a> 本项目地址: <a
+                    href="https://github.com/hk1996yhx/cf-cardtab" target="_blank">GitHub</a> 如果喜欢，烦请点个star！</p>
         </div>
     </div>
     <script>
@@ -1324,7 +1325,7 @@ const HTML_CONTENT = `
                             localStorage.setItem('authToken', result.token);
                             console.log('Token saved:', result.token);
                             loadLinks();
-                            alert('登录成功！');
+                            //alert('登录成功！');
                             logAction('登录成功');
                         } else {
                             alert('密码错误');

@@ -76,17 +76,19 @@ const HTML_CONTENT = `
                 </div>
             </div>
         </div>
-    </div>
-    <!-- 管理员控制面板 -->
-    <div class="admin-controls">
-        <input type="password" id="admin-password" placeholder="输入密码">
-        <button id="admin-mode-btn" onclick="toggleAdminMode()">设 置</button>
-        <button id="secret-garden-btn" onclick="toggleSecretGarden()">登 录</button>
+        <!-- 管理员控制面板 -->
+        <div class="admin-controls">
+            <input type="password" id="admin-password" placeholder="输入密码">
+            <button id="admin-mode-btn" onclick="toggleAdminMode()">设 置</button>
+            <button id="secret-garden-btn" onclick="toggleSecretGarden()">登 录</button>
+        </div>
     </div>
     <style>
         /* 全局样式 */
         /* 初始状态 - 模块占满屏幕 */
         .fixed-elements {
+            /*
+            */
             background: ${headbackground};
             position: absolute;
             top: 0;
@@ -109,6 +111,8 @@ const HTML_CONTENT = `
             /* 可选：渐隐 */
         }
         body {
+            /*
+            */
             background: ${bodybackground};
             font-family: Arial, sans-serif;
             margin: 0;
@@ -117,6 +121,8 @@ const HTML_CONTENT = `
             transition: background-color 0.3s ease;
         }
         #hitokoto {
+            /*
+            */
             background: ${colorbackground};
             color: white;
             padding: 10px;

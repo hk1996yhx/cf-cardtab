@@ -506,7 +506,7 @@ const HTML_CONTENT = `
         // 监听滚动事件
         window.addEventListener('scroll', () => {
             const scrollPosition = window.scrollY; // 当前滚动的像素值
-            if (scrollPosition >= 0) { // 如果滚动超过 50 像素
+            if (scrollPosition >= 10) { // 如果滚动超过 50 像素
                 fixedElement.classList.add('hide'); // 添加类名，触发动画
                 content.classList.add('show'); // 显示主内容
             } else {

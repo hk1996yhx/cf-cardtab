@@ -86,7 +86,8 @@ const HTML_CONTENT = `
         }
         /* 管理员控制面板样式 */
         .admin-controls {
-            position: fixed;
+            position: absolute;
+           /* position: fixed;*/
             top: 10px;
             right: 10px;
             font-size: 60%;

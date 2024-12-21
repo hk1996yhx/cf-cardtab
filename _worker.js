@@ -87,9 +87,6 @@ const HTML_CONTENT = `
         /* 全局样式 */
         /* 初始状态 - 模块占满屏幕 */
         .fixed-elements {
-            /*
-            */
-            background: var(--headbackground);
             position: absolute;
             top: 0;
             left: 0;
@@ -110,9 +107,6 @@ const HTML_CONTENT = `
             /* 可选：渐隐 */
         }
         body {
-            /*
-            */
-            background: var(--headbackground);
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -120,9 +114,6 @@ const HTML_CONTENT = `
             transition: background-color 0.3s ease;
         }
         #hitokoto {
-            /*
-            */
-            background: var(--headbackground);
             color: white;
             padding: 10px;
             /* 阻止文本自动换行 */
@@ -508,8 +499,10 @@ const HTML_CONTENT = `
     </div>
     <script>
         // 获取模块元素
-        const fixedElement = document.querySelector('.fixed-elements');
         const content = document.querySelector('.content');
+        const fixedElement = document.querySelector('.fixed-elements');
+        element.style.background = headbackground;
+        document.body.style.background = bodybackground;
         // 监听滚动事件
         window.addEventListener('scroll', () => {
             const scrollPosition = window.scrollY; // 当前滚动的像素值

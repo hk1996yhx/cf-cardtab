@@ -451,8 +451,7 @@ const HTML_CONTENT = `
         <!-- 版权信息 -->
         <div id="copyright" class="copyright">
             <!--请不要删除-->
-            <p>原项目地址: <a href="https://github.com/hmhm2022/Card-Tab" target="_blank">GitHub</a> 本项目地址: <a
-                    href="https://github.com/hk1996yhx/cf-cardtab" target="_blank">GitHub</a> 如果喜欢，烦请点个star！</p>
+            <p>本项目地址: <a href="https://github.com/hk1996yhx/cf-cardtab" target="_blank">GitHub</a> 原项目地址: <a href="https://github.com/hmhm2022/Card-Tab" target="_blank">GitHub</a> 如果喜欢，烦请点个star！</p>
         </div>
     </div>
     <script>

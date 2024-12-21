@@ -31,12 +31,6 @@ const HTML_CONTENT = `
                 </div>
             </div>
         </div>
-        <!-- 管理员控制面板 -->
-        <div class="admin-controls">
-            <input type="password" id="admin-password" placeholder="输入密码">
-            <button id="admin-mode-btn" onclick="toggleAdminMode()">设 置</button>
-            <button id="secret-garden-btn" onclick="toggleSecretGarden()">登 录</button>
-        </div>
     </div>
     <style>
         /* 全局样式 */
@@ -413,6 +407,12 @@ const HTML_CONTENT = `
     </style>
 </head>
 <body>
+    <!-- 管理员控制面板 -->
+    <div class="admin-controls">
+        <input type="password" id="admin-password" placeholder="输入密码">
+        <button id="admin-mode-btn" onclick="toggleAdminMode()">设 置</button>
+        <button id="secret-garden-btn" onclick="toggleSecretGarden()">登 录</button>
+    </div>
     <div id="category-directory" style="position: fixed; top: 50px; left: 20px; max-width: 200px;">
         <ul id="directory-list"></ul>
     </div>

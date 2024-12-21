@@ -40,8 +40,9 @@ const HTML_CONTENT = `
             top: 0;
             left: 0;
             width: 100vw;
-            height: 105vh;
             /* 初始占满屏幕 */
+            height: 105vh;
+            /*置顶*/
             z-index: 1000;
             transition: height 0.6s ease-in-out, opacity 0.6s ease;
             /* 添加平滑动画 */
@@ -86,8 +87,9 @@ const HTML_CONTENT = `
         }
         /* 管理员控制面板样式 */
         .admin-controls {
-            position: absolute;
-           /* position: fixed;*/
+            /*置顶*/
+            z-index: 1000;
+            position: fixed;
             top: 10px;
             right: 10px;
             font-size: 60%;

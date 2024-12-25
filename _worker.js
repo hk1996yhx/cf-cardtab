@@ -598,6 +598,9 @@ const HTML_CONTENT = `
         // 设置当前搜索引擎
         function setActiveEngine(engine) {
             currentEngine = engine;
+            // 更新按钮图标
+            const searchButton = document.getElementById('search-button');
+            searchButton.innerHTML = 'https://getfavicon.377020945.xyz/?url=' + searchEngines[engine];
             document.querySelectorAll('.search-engine').forEach(btn => {
                 // 判断按钮是否是选中的搜索引擎
                 if (btn.dataset.engine === engine) {

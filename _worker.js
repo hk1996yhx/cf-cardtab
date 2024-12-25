@@ -588,6 +588,12 @@ const HTML_CONTENT = `
                 }
             }, 100); // 100ms 后执行
         });
+        // 日志记录函数
+        function logAction(action, details) {
+            const timestamp = new Date().toISOString();
+            const logEntry = timestamp + ': ' + action + ' - ' + JSON.stringify(details);
+            console.log(logEntry);
+        }
         // 搜索引擎配置
         const searchEngines = {
             baidu: "https://www.baidu.com/s?wd=",
@@ -599,12 +605,6 @@ const HTML_CONTENT = `
         };
         //默认搜索引擎
         let currentEngine = "baidu";
-        // 日志记录函数
-        function logAction(action, details) {
-            const timestamp = new Date().toISOString();
-            const logEntry = timestamp + ': ' + action + ' - ' + JSON.stringify(details);
-            console.log(logEntry);
-        }
         // 设置当前搜索引擎
         function setActiveEngine(engine) {
             currentEngine = engine;

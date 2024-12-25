@@ -506,8 +506,8 @@ const HTML_CONTENT = `
         var bodybackground = generateRandomBackgroundImage();
         var headbackground = generateRandomBackgroundImage();
         var colorbackground = generateRandomRGBA();
+        document.querySelector('.searchpage').style.background = headbackground;
         const searchpage = document.querySelector('.searchpage');
-        searchpage.style.background = headbackground;
         document.body.style.background = bodybackground;
         // 监听滚动事件
         const content = document.querySelector('.content');

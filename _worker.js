@@ -537,12 +537,21 @@ const HTML_CONTENT = `
         var headbackground = generateRandomBackgroundImage();
         var bodybackground = generateRandomBackgroundImage();
         var colorbackground = generateRandomRGBA();
-        document.body.style.background = bodybackground;
-        document.querySelector('.searchpage').style.background = headbackground;
-        document.querySelector('#hitokoto').style.background = colorbackground;
-        document.querySelector('body h3').style.background = colorbackground;
-        document.querySelector('.search-bar').style.background = colorbackground;
-        document.querySelector('.search-bar button').style.background = colorbackground;
+        function changeheadbackground() {
+            document.querySelector('.searchpage').style.background = headbackground;
+        }
+        function changebodybackground() {
+            document.body.style.background = bodybackground;
+        }
+        function changecolorbackground() {
+            document.querySelector('#hitokoto').style.background = colorbackground;
+            document.querySelector('body h3').style.background = colorbackground;
+            document.querySelector('.search-bar').style.background = colorbackground;
+            document.querySelector('.search-bar button').style.background = colorbackground;
+        }
+        changeheadbackground();
+        changebodybackground();
+        changecolorbackground();
         // 监听滚动事件
         const searchpage = document.querySelector('.searchpage');
         const content = document.querySelector('.content');

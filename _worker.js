@@ -28,7 +28,7 @@ const HTML_CONTENT = `
         /* 当模块收起时的状态 */
         .searchpage.hide {
             /* 高度缩为 0 */
-            height: 50vh;
+            height: 0vh;
             /* 可选：渐隐 */
             opacity: 0;
         }

@@ -4,15 +4,15 @@ const HTML_CONTENT = `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--标签页标题-->
+    <!-- 标签页标题 -->
     <title>星际导航站</title>
-    <!--标签页图标-->
+    <!-- 标签页图标 -->
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>⭐</text></svg>">
     <style>
         /* 全局样式 */
         /* 初始状态 - 模块占满屏幕 */
-        .fixed-elements {
+        .searchpage {
             position: absolute;
             top: 0;
             left: 0;
@@ -27,7 +27,7 @@ const HTML_CONTENT = `
             /* 初始完全不透明 */
         }
         /* 当模块收起时的状态 */
-        .fixed-elements.hide {
+        .searchpage.hide {
             height: 50vh;
             /* 高度缩为 0 */
             opacity: 0;
@@ -46,7 +46,7 @@ const HTML_CONTENT = `
             /* 阻止文本自动换行 */
             white-space: nowrap;
         }
-        .fixed-elements h3 {
+        .searchpage h3 {
             position: absolute;
             top: 10px;
             left: 20px;
@@ -335,7 +335,7 @@ const HTML_CONTENT = `
         }
         /* 响应式设计 */
         @media (max-width: 480px) {
-            .fixed-elements {
+            .searchpage {
                 position: relative;
                 padding: 5px;
             }
@@ -387,8 +387,9 @@ const HTML_CONTENT = `
     </style>
 </head>
 <body>
-    <div class="fixed-elements">
-        <h3>我的导航</h3>
+    <!-- 搜索页 -->
+    <div class="searchpage">
+        <h3>星际导航站</h3>
         <div class="center-content">
             <!-- 一言模块 -->
             <p id="hitokoto">
@@ -412,6 +413,7 @@ const HTML_CONTENT = `
             </div>
         </div>
     </div>
+    <!-- 书签 -->
     <div class="allbodydiv">
         <!-- 管理员控制面板 -->
         <div class="admin-controls">
@@ -505,12 +507,11 @@ const HTML_CONTENT = `
         var bodybackground = generateRandomBackgroundImage();
         var headbackground = generateRandomBackgroundImage();
         var colorbackground = generateRandomRGBA();
-        // 获取模块元素
-        const content = document.querySelector('.content');
-        const fixedElement = document.querySelector('.fixed-elements');
-        fixedElement.style.background = headbackground;
+        const searchpage = document.querySelector('.searchpage');
+        searchpage.style.background = headbackground;
         document.body.style.background = bodybackground;
         // 监听滚动事件
+        const content = document.querySelector('.content');
         let debounceTimeout;
         window.addEventListener('scroll', () => {
             clearTimeout(debounceTimeout);
@@ -1418,8 +1419,8 @@ const HTML_CONTENT = `
                     ? '0 4px 8px rgba(0, 0, 0, 0.5)'
                     : '0 4px 8px rgba(0, 0, 0, 0.1)';
             });
-            const fixedElements = document.querySelectorAll('.fixed-elements');
-            fixedElements.forEach(element => {
+            const searchpage = document.querySelectorAll('.searchpage');
+            searchpage.forEach(element => {
                 element.style.backgroundColor = isDarkTheme ? '#121212' : '#e8f4ea';
                 element.style.color = isDarkTheme ? '#ffffff' : '#333';
             });

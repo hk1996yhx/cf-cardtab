@@ -121,39 +121,40 @@ const HTML_CONTENT = `
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 30px;
-            background-color: #fff;
-            padding: 10px 15px;
+            border-radius: 50px;
+            background-color: #f4f4f4;
+            padding: 8px 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
         .search-bar input {
             width: 70%;
-            padding: 10px;
+            padding: 12px 16px;
             font-size: 16px;
             border: 1px solid #ddd;
-            border-radius: 30px;
+            border-radius: 50px;
             outline: none;
-            transition: all 0.3s ease;
+            transition: border 0.3s ease;
+            background-color: #fff;
         }
         .search-bar input:focus {
-            border-color: #4CAF50;
-            box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+            border-color: #007BFF;
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
         }
         .search-bar button {
-            padding: 10px 15px;
+            padding: 12px 18px;
             font-size: 16px;
-            border: 1px solid #ddd;
-            border-radius: 30px;
-            background-color: #4CAF50;
-            color: #fff;
+            border: 1px solid #007BFF;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: background-color 0.3s ease;
         }
         .search-bar button:hover {
-            background-color: #45a049;
+            background-color: #0056b3;
         }
         .search-bar button:active {
-            background-color: #388e3c;
+            background-color: #004085;
         }
         /* 搜索引擎按钮样式 */
         .search-engines {

@@ -517,10 +517,10 @@ const HTML_CONTENT = `
             clearTimeout(debounceTimeout);
             debounceTimeout = setTimeout(() => {
                 const scrollPosition = window.scrollY; // 当前滚动的像素值
-                if (scrollPosition >= 10) { // 如果滚动超过 50 像素
+                if (scrollPosition >= 50) { // 如果滚动超过 50 像素
                     searchpage.classList.add('hide'); // 添加类名，触发动画
                     content.classList.add('show'); // 显示主内容
-                } else {
+                } else if (scrollPosition <= 5) {
                     searchpage.classList.remove('hide'); // 恢复模块
                     content.classList.remove('show'); // 隐藏主内容
                 }

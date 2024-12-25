@@ -600,10 +600,11 @@ const HTML_CONTENT = `
             currentEngine = engine;
             // 更新按钮图标
             const searchButton = document.getElementById('search-button');
+            let searchUrl;
             if (engine === 'douyin') {
-                const searchUrl = 'https://getfavicon.377020945.xyz/?url=https://www.tiktok.com';
+                searchUrl = 'https://getfavicon.377020945.xyz/?url=https://www.tiktok.com';
             } else {
-                const searchUrl = 'https://getfavicon.377020945.xyz/?url=' + searchEngines[engine];
+                searchUrl = 'https://getfavicon.377020945.xyz/?url=' + searchEngines[engine];
             }
             // 创建一个 img 元素
             const img = document.createElement('img');

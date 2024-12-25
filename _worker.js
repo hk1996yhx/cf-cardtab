@@ -410,49 +410,51 @@ const HTML_CONTENT = `
     </style>
 </head>
 <body>
-    <!-- 管理员控制面板 -->
-    <div class="admin-controls">
-        <input type="password" id="admin-password" placeholder="输入密码">
-        <button id="admin-mode-btn" onclick="toggleAdminMode()">设 置</button>
-        <button id="secret-garden-btn" onclick="toggleSecretGarden()">登 录</button>
-    </div>
-    <div id="category-directory" style="position: fixed; top: 50px; left: 20px; max-width: 200px;">
-        <ul id="directory-list"></ul>
-    </div>
-    <div class="content">
-        <!-- 添加/删除控制按钮 -->
-        <div class="add-remove-controls">
-            <button class="round-btn add-btn" onclick="showAddDialog()">+</button>
-            <button class="round-btn remove-btn" onclick="toggleRemoveMode()">-</button>
-            <button class="round-btn category-btn" onclick="addCategory()">C+</button>
-            <button class="round-btn remove-category-btn" onclick="toggleRemoveCategory()">C-</button>
+    <div class="allbodydiv">
+        <!-- 管理员控制面板 -->
+        <div class="admin-controls">
+            <input type="password" id="admin-password" placeholder="输入密码">
+            <button id="admin-mode-btn" onclick="toggleAdminMode()">设 置</button>
+            <button id="secret-garden-btn" onclick="toggleSecretGarden()">登 录</button>
         </div>
-        <!-- 分类和卡片容器 -->
-        <div id="sections-container"></div>
-        <!-- 主题切换按钮 -->
-        <button id="theme-toggle" onclick="toggleTheme()">◑</button>
-        <!-- 添加链接对话框 -->
-        <div id="dialog-overlay">
-            <div id="dialog-box">
-                <label for="name-input">名称</label>
-                <input type="text" id="name-input">
-                <label for="url-input">地址</label>
-                <input type="text" id="url-input">
-                <label for="category-select">选择分类</label>
-                <select id="category-select"></select>
-                <div class="private-link-container">
-                    <label for="private-checkbox">私密链接</label>
-                    <input type="checkbox" id="private-checkbox">
-                </div>
-                <button onclick="addLink()">确定</button>
-                <button onclick="hideAddDialog()">取消</button>
+        <div id="category-directory" style="position: fixed; top: 50px; left: 20px; max-width: 200px;">
+            <ul id="directory-list"></ul>
+        </div>
+        <div class="content">
+            <!-- 添加/删除控制按钮 -->
+            <div class="add-remove-controls">
+                <button class="round-btn add-btn" onclick="showAddDialog()">+</button>
+                <button class="round-btn remove-btn" onclick="toggleRemoveMode()">-</button>
+                <button class="round-btn category-btn" onclick="addCategory()">C+</button>
+                <button class="round-btn remove-category-btn" onclick="toggleRemoveCategory()">C-</button>
             </div>
-        </div>
-        <!-- 版权信息 -->
-        <div id="copyright" class="copyright">
-            <!--请不要删除-->
-            <p>本项目地址: <a href="https://github.com/hk1996yhx/cf-cardtab" target="_blank">GitHub</a> 原项目地址: <a
-                    href="https://github.com/hmhm2022/Card-Tab" target="_blank">GitHub</a> 如果喜欢，烦请点个star！</p>
+            <!-- 分类和卡片容器 -->
+            <div id="sections-container"></div>
+            <!-- 主题切换按钮 -->
+            <button id="theme-toggle" onclick="toggleTheme()">◑</button>
+            <!-- 添加链接对话框 -->
+            <div id="dialog-overlay">
+                <div id="dialog-box">
+                    <label for="name-input">名称</label>
+                    <input type="text" id="name-input">
+                    <label for="url-input">地址</label>
+                    <input type="text" id="url-input">
+                    <label for="category-select">选择分类</label>
+                    <select id="category-select"></select>
+                    <div class="private-link-container">
+                        <label for="private-checkbox">私密链接</label>
+                        <input type="checkbox" id="private-checkbox">
+                    </div>
+                    <button onclick="addLink()">确定</button>
+                    <button onclick="hideAddDialog()">取消</button>
+                </div>
+            </div>
+            <!-- 版权信息 -->
+            <div id="copyright" class="copyright">
+                <!--请不要删除-->
+                <p>本项目地址: <a href="https://github.com/hk1996yhx/cf-cardtab" target="_blank">GitHub</a> 原项目地址: <a
+                        href="https://github.com/hmhm2022/Card-Tab" target="_blank">GitHub</a> 如果喜欢，烦请点个star！</p>
+            </div>
         </div>
     </div>
     <script>
@@ -1506,224 +1508,224 @@ const HTML_CONTENT = `
 `;
 // 服务端 token 验证
 async function validateServerToken(authToken, env) {
-    if (!authToken) {
-        return {
-            isValid: false,
-            status: 401,
-            response: { error: 'Unauthorized', message: '未登录或登录已过期' }
-        };
-    }
-    try {
-        const [timestamp, hash] = authToken.split('.');
-        const tokenTimestamp = parseInt(timestamp);
-        const now = Date.now();
-        const FIFTEEN_MINUTES = 15 * 60 * 1000;
-        if (now - tokenTimestamp > FIFTEEN_MINUTES) {
-            return {
-                isValid: false,
-                status: 401,
-                response: {
-                    error: 'Token expired',
-                    tokenExpired: true,
-                    //message: '登录已过期，请重新登录'
-                }
-            };
-        }
-        const tokenData = timestamp + "_" + env.ADMIN_PASSWORD;
-        const encoder = new TextEncoder();
-        const data = encoder.encode(tokenData);
-        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-        const expectedHash = btoa(String.fromCharCode(...new Uint8Array(hashBuffer)));
-        if (hash !== expectedHash) {
-            return {
-                isValid: false,
-                status: 401,
-                response: {
-                    error: 'Invalid token',
-                    tokenInvalid: true,
-                    message: '登录状态无效，请重新登录'
-                }
-            };
-        }
-        return { isValid: true };
-    } catch (error) {
-        return {
-            isValid: false,
-            status: 401,
-            response: {
-                error: 'Invalid token',
-                tokenInvalid: true,
-                message: '登录验证失败，请重新登录'
-            }
-        };
-    }
+if (!authToken) {
+return {
+isValid: false,
+status: 401,
+response: { error: 'Unauthorized', message: '未登录或登录已过期' }
+};
+}
+try {
+const [timestamp, hash] = authToken.split('.');
+const tokenTimestamp = parseInt(timestamp);
+const now = Date.now();
+const FIFTEEN_MINUTES = 15 * 60 * 1000;
+if (now - tokenTimestamp > FIFTEEN_MINUTES) {
+return {
+isValid: false,
+status: 401,
+response: {
+error: 'Token expired',
+tokenExpired: true,
+//message: '登录已过期，请重新登录'
+}
+};
+}
+const tokenData = timestamp + "_" + env.ADMIN_PASSWORD;
+const encoder = new TextEncoder();
+const data = encoder.encode(tokenData);
+const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+const expectedHash = btoa(String.fromCharCode(...new Uint8Array(hashBuffer)));
+if (hash !== expectedHash) {
+return {
+isValid: false,
+status: 401,
+response: {
+error: 'Invalid token',
+tokenInvalid: true,
+message: '登录状态无效，请重新登录'
+}
+};
+}
+return { isValid: true };
+} catch (error) {
+return {
+isValid: false,
+status: 401,
+response: {
+error: 'Invalid token',
+tokenInvalid: true,
+message: '登录验证失败，请重新登录'
+}
+};
+}
 }
 export default {
-    async fetch(request, env) {
-        const url = new URL(request.url);
-        if (url.pathname === '/') {
-            return new Response(HTML_CONTENT, {
-                headers: { 'Content-Type': 'text/html' }
-            });
-        }
-        if (url.pathname === '/api/getLinks') {
-            const userId = url.searchParams.get('userId');
-            const authToken = request.headers.get('Authorization');
-            const data = await env.CARD_ORDER.get(userId);
-            if (data) {
-                const parsedData = JSON.parse(data);
-                // 验证 token
-                if (authToken) {
-                    const validation = await validateServerToken(authToken, env);
-                    if (!validation.isValid) {
-                        return new Response(JSON.stringify(validation.response), {
-                            status: validation.status,
-                            headers: { 'Content-Type': 'application/json' }
-                        });
-                    }
-                    // Token 有效，返回完整数据
-                    return new Response(JSON.stringify(parsedData), {
-                        status: 200,
-                        headers: { 'Content-Type': 'application/json' }
-                    });
-                }
-                // 未提供 token，只返回公开数据
-                const filteredLinks = parsedData.links.filter(link => !link.isPrivate);
-                const filteredCategories = {};
-                Object.keys(parsedData.categories).forEach(category => {
-                    filteredCategories[category] = parsedData.categories[category].filter(link => !link.isPrivate);
-                });
-                return new Response(JSON.stringify({
-                    links: filteredLinks,
-                    categories: filteredCategories
-                }), {
-                    status: 200,
-                    headers: { 'Content-Type': 'application/json' }
-                });
-            }
-            return new Response(JSON.stringify({
-                links: [],
-                categories: {}
-            }), {
-                status: 200,
-                headers: { 'Content-Type': 'application/json' }
-            });
-        }
-        if (url.pathname === '/api/saveOrder' && request.method === 'POST') {
-            const authToken = request.headers.get('Authorization');
-            const validation = await validateServerToken(authToken, env);
-            if (!validation.isValid) {
-                return new Response(JSON.stringify(validation.response), {
-                    status: validation.status,
-                    headers: { 'Content-Type': 'application/json' }
-                });
-            }
-            const { userId, links, categories } = await request.json();
-            await env.CARD_ORDER.put(userId, JSON.stringify({ links, categories }));
-            return new Response(JSON.stringify({
-                success: true,
-                message: '保存成功'
-            }), {
-                status: 200,
-                headers: { 'Content-Type': 'application/json' }
-            });
-        }
-        if (url.pathname === '/api/verifyPassword' && request.method === 'POST') {
-            try {
-                const { password } = await request.json();
-                const isValid = password === env.ADMIN_PASSWORD;
-                if (isValid) {
-                    // 生成包含时间戳的加密 token
-                    const timestamp = Date.now();
-                    const tokenData = timestamp + "_" + env.ADMIN_PASSWORD;
-                    const encoder = new TextEncoder();
-                    const data = encoder.encode(tokenData);
-                    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-                    // 使用指定格式：timestamp.hash
-                    const token = timestamp + "." + btoa(String.fromCharCode(...new Uint8Array(hashBuffer)));
-                    return new Response(JSON.stringify({
-                        valid: true,
-                        token: token
-                    }), {
-                        status: 200,
-                        headers: { 'Content-Type': 'application/json' }
-                    });
-                }
-                return new Response(JSON.stringify({
-                    valid: false,
-                    error: 'Invalid password'
-                }), {
-                    status: 403,
-                    headers: { 'Content-Type': 'application/json' }
-                });
-            } catch (error) {
-                return new Response(JSON.stringify({
-                    valid: false,
-                    error: error.message
-                }), {
-                    status: 500,
-                    headers: { 'Content-Type': 'application/json' }
-                });
-            }
-        }
-        if (url.pathname === '/api/backupData' && request.method === 'POST') {
-            const { sourceUserId } = await request.json();
-            const result = await this.backupData(env, sourceUserId);
-            return new Response(JSON.stringify(result), {
-                status: result.success ? 200 : 404,
-                headers: { 'Content-Type': 'application/json' }
-            });
-        }
-        return new Response('Not Found', { status: 404 });
-    },
-    async backupData(env, sourceUserId) {
-        const MAX_BACKUPS = 10;
-        const sourceData = await env.CARD_ORDER.get(sourceUserId);
-        if (sourceData) {
-            try {
-                const currentDate = new Date().toLocaleString('zh-CN', {
-                    timeZone: 'Asia/Shanghai',
-                    year: 'numeric',
-                    month: '2-digit',
-                    day: '2-digit',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit',
-                    hour12: false
-                }).replace(/\//g, '-');
-                const backupId = `backup_${currentDate}`;
-                const backups = await env.CARD_ORDER.list({ prefix: 'backup_' });
-                const backupKeys = backups.keys.map(key => key.name).sort((a, b) => {
-                    const timeA = new Date(a.split('_')[1].replace(/-/g, '/')).getTime();
-                    const timeB = new Date(b.split('_')[1].replace(/-/g, '/')).getTime();
-                    return timeB - timeA;  // 降序排序，最新的在前
-                });
-                await env.CARD_ORDER.put(backupId, sourceData);
-                const allBackups = [...backupKeys, backupId].sort((a, b) => {
-                    const timeA = new Date(a.split('_')[1].replace(/-/g, '/')).getTime();
-                    const timeB = new Date(b.split('_')[1].replace(/-/g, '/')).getTime();
-                    return timeB - timeA;
-                });
-                const backupsToDelete = allBackups.slice(MAX_BACKUPS);
-                if (backupsToDelete.length > 0) {
-                    await Promise.all(
-                        backupsToDelete.map(key => env.CARD_ORDER.delete(key))
-                    );
-                }
-                return {
-                    success: true,
-                    backupId,
-                    remainingBackups: MAX_BACKUPS,
-                    deletedCount: backupsToDelete.length
-                };
-            } catch (error) {
-                return {
-                    success: false,
-                    error: 'Backup operation failed',
-                    details: error.message
-                };
-            }
-        }
-        return { success: false, error: 'Source data not found' };
-    }
+async fetch(request, env) {
+const url = new URL(request.url);
+if (url.pathname === '/') {
+return new Response(HTML_CONTENT, {
+headers: { 'Content-Type': 'text/html' }
+});
+}
+if (url.pathname === '/api/getLinks') {
+const userId = url.searchParams.get('userId');
+const authToken = request.headers.get('Authorization');
+const data = await env.CARD_ORDER.get(userId);
+if (data) {
+const parsedData = JSON.parse(data);
+// 验证 token
+if (authToken) {
+const validation = await validateServerToken(authToken, env);
+if (!validation.isValid) {
+return new Response(JSON.stringify(validation.response), {
+status: validation.status,
+headers: { 'Content-Type': 'application/json' }
+});
+}
+// Token 有效，返回完整数据
+return new Response(JSON.stringify(parsedData), {
+status: 200,
+headers: { 'Content-Type': 'application/json' }
+});
+}
+// 未提供 token，只返回公开数据
+const filteredLinks = parsedData.links.filter(link => !link.isPrivate);
+const filteredCategories = {};
+Object.keys(parsedData.categories).forEach(category => {
+filteredCategories[category] = parsedData.categories[category].filter(link => !link.isPrivate);
+});
+return new Response(JSON.stringify({
+links: filteredLinks,
+categories: filteredCategories
+}), {
+status: 200,
+headers: { 'Content-Type': 'application/json' }
+});
+}
+return new Response(JSON.stringify({
+links: [],
+categories: {}
+}), {
+status: 200,
+headers: { 'Content-Type': 'application/json' }
+});
+}
+if (url.pathname === '/api/saveOrder' && request.method === 'POST') {
+const authToken = request.headers.get('Authorization');
+const validation = await validateServerToken(authToken, env);
+if (!validation.isValid) {
+return new Response(JSON.stringify(validation.response), {
+status: validation.status,
+headers: { 'Content-Type': 'application/json' }
+});
+}
+const { userId, links, categories } = await request.json();
+await env.CARD_ORDER.put(userId, JSON.stringify({ links, categories }));
+return new Response(JSON.stringify({
+success: true,
+message: '保存成功'
+}), {
+status: 200,
+headers: { 'Content-Type': 'application/json' }
+});
+}
+if (url.pathname === '/api/verifyPassword' && request.method === 'POST') {
+try {
+const { password } = await request.json();
+const isValid = password === env.ADMIN_PASSWORD;
+if (isValid) {
+// 生成包含时间戳的加密 token
+const timestamp = Date.now();
+const tokenData = timestamp + "_" + env.ADMIN_PASSWORD;
+const encoder = new TextEncoder();
+const data = encoder.encode(tokenData);
+const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+// 使用指定格式：timestamp.hash
+const token = timestamp + "." + btoa(String.fromCharCode(...new Uint8Array(hashBuffer)));
+return new Response(JSON.stringify({
+valid: true,
+token: token
+}), {
+status: 200,
+headers: { 'Content-Type': 'application/json' }
+});
+}
+return new Response(JSON.stringify({
+valid: false,
+error: 'Invalid password'
+}), {
+status: 403,
+headers: { 'Content-Type': 'application/json' }
+});
+} catch (error) {
+return new Response(JSON.stringify({
+valid: false,
+error: error.message
+}), {
+status: 500,
+headers: { 'Content-Type': 'application/json' }
+});
+}
+}
+if (url.pathname === '/api/backupData' && request.method === 'POST') {
+const { sourceUserId } = await request.json();
+const result = await this.backupData(env, sourceUserId);
+return new Response(JSON.stringify(result), {
+status: result.success ? 200 : 404,
+headers: { 'Content-Type': 'application/json' }
+});
+}
+return new Response('Not Found', { status: 404 });
+},
+async backupData(env, sourceUserId) {
+const MAX_BACKUPS = 10;
+const sourceData = await env.CARD_ORDER.get(sourceUserId);
+if (sourceData) {
+try {
+const currentDate = new Date().toLocaleString('zh-CN', {
+timeZone: 'Asia/Shanghai',
+year: 'numeric',
+month: '2-digit',
+day: '2-digit',
+hour: '2-digit',
+minute: '2-digit',
+second: '2-digit',
+hour12: false
+}).replace(/\//g, '-');
+const backupId = `backup_${currentDate}`;
+const backups = await env.CARD_ORDER.list({ prefix: 'backup_' });
+const backupKeys = backups.keys.map(key => key.name).sort((a, b) => {
+const timeA = new Date(a.split('_')[1].replace(/-/g, '/')).getTime();
+const timeB = new Date(b.split('_')[1].replace(/-/g, '/')).getTime();
+return timeB - timeA; // 降序排序，最新的在前
+});
+await env.CARD_ORDER.put(backupId, sourceData);
+const allBackups = [...backupKeys, backupId].sort((a, b) => {
+const timeA = new Date(a.split('_')[1].replace(/-/g, '/')).getTime();
+const timeB = new Date(b.split('_')[1].replace(/-/g, '/')).getTime();
+return timeB - timeA;
+});
+const backupsToDelete = allBackups.slice(MAX_BACKUPS);
+if (backupsToDelete.length > 0) {
+await Promise.all(
+backupsToDelete.map(key => env.CARD_ORDER.delete(key))
+);
+}
+return {
+success: true,
+backupId,
+remainingBackups: MAX_BACKUPS,
+deletedCount: backupsToDelete.length
+};
+} catch (error) {
+return {
+success: false,
+error: 'Backup operation failed',
+details: error.message
+};
+}
+}
+return { success: false, error: 'Source data not found' };
+}
 };

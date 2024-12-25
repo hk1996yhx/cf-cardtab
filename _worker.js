@@ -41,6 +41,7 @@ const HTML_CONTENT = `
         }
         body h3 {
             position: absolute;
+            color: white;
             top: 10px;
             left: 20px;
             margin: 0;
@@ -119,21 +120,40 @@ const HTML_CONTENT = `
         .search-bar {
             display: flex;
             justify-content: center;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 30px;
+            background-color: #fff;
+            padding: 10px 15px;
         }
         .search-bar input {
             width: 70%;
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 5px 0 0 5px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        .search-bar input:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
         }
         .search-bar button {
-            padding: 5px 10px;
-            border: 1px solid #ccc;
-            border-left: none;
-            background-color: #f8f8;
-            border-radius: 0 5px 5px 0;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 30px;
+            background-color: #4CAF50;
+            color: #fff;
             cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .search-bar button:hover {
+            background-color: #45a049;
+        }
+        .search-bar button:active {
+            background-color: #388e3c;
         }
         /* 搜索引擎按钮样式 */
         .search-engines {

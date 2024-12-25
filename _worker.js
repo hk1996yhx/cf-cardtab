@@ -19,7 +19,7 @@ const HTML_CONTENT = `
             /* 初始占满屏幕 */
             height: 105vh;
             /*置顶*/
-            z-index: 9999;
+            z-index: 9998;
             /* 添加平滑动画 */
             transition: height 0.4s ease-in-out, opacity 0.4s ease;
             /* 初始完全不透明 */
@@ -45,7 +45,7 @@ const HTML_CONTENT = `
             top: 10px;
             left: 20px;
             margin: 0;
-            z-index: 19999;
+            z-index: 9999;
         }
         #hitokoto {
             color: white;

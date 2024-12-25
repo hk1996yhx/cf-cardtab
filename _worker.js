@@ -600,7 +600,16 @@ const HTML_CONTENT = `
             currentEngine = engine;
             // 更新按钮图标
             const searchButton = document.getElementById('search-button');
-            searchButton.innerHTML = 'https://getfavicon.377020945.xyz/?url=' + searchEngines[engine];
+            const searchUrl = 'https://getfavicon.377020945.xyz/?url=' + searchEngines[engine];
+            // 创建一个 img 元素
+            const img = document.createElement('img');
+            img.src = searchUrl;  // 设置 src 为目标 URL，这个地址会返回图标
+            img.alt = "Icon";  // 设置 alt 属性，用于图标未加载时的替代文本
+            img.style.width = "24px";  // 设置图标的宽度
+            img.style.height = "24px";  // 设置图标的高度
+            // 将 img 元素插入到按钮中
+            searchButton.innerHTML = '';  // 清空现有内容
+            searchButton.appendChild(img);  // 添加图标到按钮中
             document.querySelectorAll('.search-engine').forEach(btn => {
                 // 判断按钮是否是选中的搜索引擎
                 if (btn.dataset.engine === engine) {

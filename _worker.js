@@ -600,7 +600,11 @@ const HTML_CONTENT = `
             currentEngine = engine;
             // 更新按钮图标
             const searchButton = document.getElementById('search-button');
-            const searchUrl = 'https://getfavicon.377020945.xyz/?url=' + searchEngines[engine];
+            if (engine === 'douyin') {
+                const searchUrl = 'https://getfavicon.377020945.xyz/?url=https://www.tiktok.com';
+            } else {
+                const searchUrl = 'https://getfavicon.377020945.xyz/?url=' + searchEngines[engine];
+            }
             // 创建一个 img 元素
             const img = document.createElement('img');
             img.src = searchUrl;  // 设置 src 为目标 URL，这个地址会返回图标
@@ -615,13 +619,9 @@ const HTML_CONTENT = `
                 if (btn.dataset.engine === engine) {
                     // 设置选中的样式
                     btn.style.backgroundColor = '#7DF9FF';  // 选中时的背景颜色
-                    btn.style.color = 'white'; // 选中时文字颜色
-                    btn.style.borderColor = '#4CAF50'; // 选中时边框颜色
                 } else {
                     // 设置未选中的样式
                     btn.style.backgroundColor = colorbackground; // 未选中时的背景颜色
-                    btn.style.color = 'white'; // 选中时文字颜色
-                    btn.style.borderColor = '#ddd'; // 未选中时的边框颜色
                 }
             });
             logAction('设置搜索引擎', { engine });

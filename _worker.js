@@ -389,6 +389,13 @@ const HTML_CONTENT = `
 <body>
     <div class="allbodydiv">
         <h3>星际导航站</h3>
+        <!-- 管理员控制面板 -->
+        <div class="admin-controls">
+            <input type="text" id="admin-user" placeholder="admin">
+            <input type="password" id="admin-password" placeholder="输入密码">
+            <button id="admin-mode-btn" onclick="toggleAdminMode()">设 置</button>
+            <button id="secret-garden-btn" onclick="toggleSecretGarden()">登 录</button>
+        </div>
         <!-- 搜索页 -->
         <div class="searchpage">
             <div class="center-content">
@@ -414,17 +421,9 @@ const HTML_CONTENT = `
                 </div>
             </div>
         </div>
-        <!-- 管理员控制面板 -->
-        <div class="admin-controls">
-            <input type="password" id="admin-password" placeholder="输入密码">
-            <button id="admin-mode-btn" onclick="toggleAdminMode()">设 置</button>
-            <button id="secret-garden-btn" onclick="toggleSecretGarden()">登 录</button>
-        </div>
-        <div id="category-directory" style="position: fixed; top: 50px; left: 20px; max-width: 200px;">
-            <ul id="directory-list"></ul>
-        </div>
         <!-- 书签 -->
         <div class="content">
+            <!-- 类别目录 -->
             <!-- 添加/删除控制按钮 -->
             <div class="add-remove-controls">
                 <button class="round-btn add-btn" onclick="showAddDialog()">+</button>

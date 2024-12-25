@@ -121,40 +121,51 @@ const HTML_CONTENT = `
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            /* 半透明背景 */
             border-radius: 50px;
-            background-color: #f4f4f4;
-            padding: 8px 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 10px 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            /* 更柔和的阴影效果 */
+            backdrop-filter: blur(8px);
+            /* 背景模糊效果，增添气泡感 */
         }
         .search-bar input {
             width: 70%;
             padding: 12px 16px;
             font-size: 16px;
-            border: 1px solid #ddd;
-            border-radius: 50px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            border-radius: 30px;
             outline: none;
-            transition: border 0.3s ease;
-            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.8);
+            /* 输入框半透明背景 */
+            transition: all 0.3s ease;
         }
         .search-bar input:focus {
-            border-color: #007BFF;
-            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+            border-color: #4CAF50;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
         }
         .search-bar button {
             padding: 12px 18px;
             font-size: 16px;
-            border: 1px solid #007BFF;
-            background-color: #007BFF;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            background-color: rgba(76, 175, 80, 0.8);
+            /* 半透明绿色按钮 */
             color: white;
-            border-radius: 50px;
+            border-radius: 30px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.1s ease;
         }
         .search-bar button:hover {
-            background-color: #0056b3;
+            background-color: rgba(76, 175, 80, 1);
+            /* 悬停时变为不透明 */
+            transform: translateY(-2px);
+            /* 提升按钮的悬浮效果 */
         }
         .search-bar button:active {
-            background-color: #004085;
+            background-color: rgba(56, 142, 60, 0.8);
+            transform: translateY(2px);
+            /* 按钮点击时向下沉降的效果 */
         }
         /* 搜索引擎按钮样式 */
         .search-engines {

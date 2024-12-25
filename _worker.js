@@ -9,6 +9,16 @@ const HTML_CONTENT = `
     <!-- 标签页图标 -->
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>⭐</text></svg>">
+    <!-- 预加载常用的搜索引擎图标 -->
+    <link rel="preload" href="https://getfavicon.377020945.xyz/?url=https://www.baidu.com/s?wd=" as="image">
+    <link rel="preload" href="https://getfavicon.377020945.xyz/?url=https://www.bing.com/search?q=" as="image">
+    <link rel="preload" href="https://getfavicon.377020945.xyz/?url=https://www.google.com/search?q=" as="image">
+    <link rel="preload" href="https://getfavicon.377020945.xyz/?url=https://www.youtube.com/results?search_query="
+        as="image">
+    <link rel="preload" href="https://getfavicon.377020945.xyz/?url=https://www.tiktok.com" as="image">
+    <link rel="preload" href="https://getfavicon.377020945.xyz/?url=https://search.bilibili.com/all?keyword="
+        as="image">
+    <!-- 其他搜索引擎图标... -->
     <style>
         /* 全局样式 */
         .searchpage {

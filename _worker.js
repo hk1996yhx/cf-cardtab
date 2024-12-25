@@ -44,7 +44,7 @@ const HTML_CONTENT = `
             top: 10px;
             left: 20px;
             margin: 0;
-            z-index: 9999;
+            z-index: 19999;
         }
         #hitokoto {
             color: white;
@@ -387,34 +387,33 @@ const HTML_CONTENT = `
     </style>
 </head>
 <body>
-    <h3>星际导航站</h3>
-    <!-- 搜索页 -->
-    <div class="searchpage">
-        <div class="center-content">
-            <!-- 一言模块 -->
-            <p id="hitokoto">
-                <a href="#" id="hitokoto_text"></a>
-            </p>
-            <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
-            <!-- 搜索栏 -->
-            <div class="search-container">
-                <div class="search-bar">
-                    <input type="text" id="search-input" placeholder="">
-                    <button id="search-button">🔍</button>
-                </div>
-                <div class="search-engines">
-                    <button class="search-engine" data-engine="baidu">百度</button>
-                    <button class="search-engine" data-engine="bing">必应</button>
-                    <button class="search-engine" data-engine="google">谷歌</button>
-                    <button class="search-engine" data-engine="youtube">YouTube</button>
-                    <button class="search-engine" data-engine="douyin">抖音</button>
-                    <button class="search-engine" data-engine="bilibili">bilibili</button>
+    <div class="allbodydiv">
+        <h3>星际导航站</h3>
+        <!-- 搜索页 -->
+        <div class="searchpage">
+            <div class="center-content">
+                <!-- 一言模块 -->
+                <p id="hitokoto">
+                    <a href="#" id="hitokoto_text"></a>
+                </p>
+                <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+                <!-- 搜索栏 -->
+                <div class="search-container">
+                    <div class="search-bar">
+                        <input type="text" id="search-input" placeholder="">
+                        <button id="search-button">🔍</button>
+                    </div>
+                    <div class="search-engines">
+                        <button class="search-engine" data-engine="baidu">百度</button>
+                        <button class="search-engine" data-engine="bing">必应</button>
+                        <button class="search-engine" data-engine="google">谷歌</button>
+                        <button class="search-engine" data-engine="youtube">YouTube</button>
+                        <button class="search-engine" data-engine="douyin">抖音</button>
+                        <button class="search-engine" data-engine="bilibili">bilibili</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- 书签 -->
-    <div class="allbodydiv">
         <!-- 管理员控制面板 -->
         <div class="admin-controls">
             <input type="password" id="admin-password" placeholder="输入密码">
@@ -424,6 +423,7 @@ const HTML_CONTENT = `
         <div id="category-directory" style="position: fixed; top: 50px; left: 20px; max-width: 200px;">
             <ul id="directory-list"></ul>
         </div>
+        <!-- 书签 -->
         <div class="content">
             <!-- 添加/删除控制按钮 -->
             <div class="add-remove-controls">

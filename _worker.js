@@ -19,7 +19,7 @@ const HTML_CONTENT = `
             /* 初始占满屏幕 */
             height: 105vh;
             /*置顶*/
-            z-index: 1000;
+            z-index: 9999;
             /* 添加平滑动画 */
             transition: height 0.4s ease-in-out, opacity 0.4s ease;
             /* 初始完全不透明 */
@@ -39,17 +39,18 @@ const HTML_CONTENT = `
             background-color: #e8f4ea;
             transition: background-color 0.3s ease;
         }
-        #hitokoto {
-            color: white;
-            padding: 10px;
-            /* 阻止文本自动换行 */
-            white-space: nowrap;
-        }
         body h3 {
             position: absolute;
             top: 10px;
             left: 20px;
             margin: 0;
+            z-index: 9999;
+        }
+        #hitokoto {
+            color: white;
+            padding: 10px;
+            /* 阻止文本自动换行 */
+            white-space: nowrap;
         }
         /* 中心内容样式 */
         .center-content {
@@ -64,7 +65,7 @@ const HTML_CONTENT = `
         /* 管理员控制面板样式 */
         .admin-controls {
             /*置顶*/
-            z-index: 1000;
+            z-index: 9999;
             position: fixed;
             top: 10px;
             right: 10px;
@@ -319,7 +320,7 @@ const HTML_CONTENT = `
             justify-content: center;
             align-items: center;
             font-size: 14px;
-            z-index: 1000;
+            z-index: 100;
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
         }
         #copyright p {

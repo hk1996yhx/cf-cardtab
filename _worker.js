@@ -171,14 +171,31 @@ const HTML_CONTENT = `
         .search-engines {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
+            margin-top: 20px;
         }
         .search-engine {
-            padding: 5px 10px;
-            border: 1px solid #ccc;
-            background-color: #f0f0f0;
-            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            background-color: #ffffff;
+            color: white;
+            border-radius: 30px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .search-engine:hover {
+            background-color: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+            transform: translateY(-3px);
+            /* 按钮悬浮时上浮 */
+        }
+        .search-engine:active {
+            background-color: #45a049;
+            transform: translateY(1px);
+            /* 按钮点击时下沉 */
         }
         /* 主题切换按钮样式 */
         #theme-toggle {
@@ -492,7 +509,7 @@ const HTML_CONTENT = `
         </div>
     </div>
     <script>
-        //随机背景图片选择函数
+        //动态设置背景及颜色
         function generateRandomBackgroundImage() {
             // Array of sample image URLs
             const backgrounds = [
@@ -525,15 +542,13 @@ const HTML_CONTENT = `
             // Choose a random image URL from the array
             return backgrounds[Math.floor(Math.random() * backgrounds.length)];
         }
-        // 随机颜色生成函数
         function generateRandomRGBA() {
             // 对每个颜色通道分别生成随机数
             const red = Math.floor(Math.random() * 256);
             const green = Math.floor(Math.random() * 256);
             const blue = Math.floor(Math.random() * 256);
-            return 'rgba(' + red + ',' + green + ',' + blue + ',0.7)';
+            return 'rgba(' + red + ',' + green + ',' + blue + ',0.6)';
         }
-        // 动态设置背景
         var headbackground = generateRandomBackgroundImage();
         var bodybackground = generateRandomBackgroundImage();
         var colorbackground = generateRandomRGBA();

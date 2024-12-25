@@ -391,7 +391,6 @@ const HTML_CONTENT = `
         <h3>星际导航站</h3>
         <!-- 管理员控制面板 -->
         <div class="admin-controls">
-            <input type="text" id="admin-user" placeholder="admin">
             <input type="password" id="admin-password" placeholder="输入密码">
             <button id="admin-mode-btn" onclick="toggleAdminMode()">设 置</button>
             <button id="secret-garden-btn" onclick="toggleSecretGarden()">登 录</button>
@@ -461,14 +460,6 @@ const HTML_CONTENT = `
         </div>
     </div>
     <script>
-        // 随机颜色生成函数
-        function generateRandomRGBA() {
-            // 对每个颜色通道分别生成随机数
-            const red = Math.floor(Math.random() * 256);
-            const green = Math.floor(Math.random() * 256);
-            const blue = Math.floor(Math.random() * 256);
-            return 'rgba(' + red + ',' + green + ',' + blue + ',0.7)';
-        }
         //随机背景图片选择函数
         function generateRandomBackgroundImage() {
             // Array of sample image URLs
@@ -502,14 +493,23 @@ const HTML_CONTENT = `
             // Choose a random image URL from the array
             return backgrounds[Math.floor(Math.random() * backgrounds.length)];
         }
+        // 随机颜色生成函数
+        function generateRandomRGBA() {
+            // 对每个颜色通道分别生成随机数
+            const red = Math.floor(Math.random() * 256);
+            const green = Math.floor(Math.random() * 256);
+            const blue = Math.floor(Math.random() * 256);
+            return 'rgba(' + red + ',' + green + ',' + blue + ',0.7)';
+        }
         // 动态设置背景
-        var bodybackground = generateRandomBackgroundImage();
         var headbackground = generateRandomBackgroundImage();
+        var bodybackground = generateRandomBackgroundImage();
         var colorbackground = generateRandomRGBA();
-        document.querySelector('.searchpage').style.background = headbackground;
-        const searchpage = document.querySelector('.searchpage');
         document.body.style.background = bodybackground;
+        document.querySelector('.searchpage').style.background = headbackground;
+        document.querySelector('#hitokoto').style.background = colorbackground;
         // 监听滚动事件
+        const searchpage = document.querySelector('.searchpage');
         const content = document.querySelector('.content');
         let debounceTimeout;
         window.addEventListener('scroll', () => {

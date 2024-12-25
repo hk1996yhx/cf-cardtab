@@ -11,7 +11,6 @@ const HTML_CONTENT = `
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>⭐</text></svg>">
     <style>
         /* 全局样式 */
-        /* 初始状态 - 模块占满屏幕 */
         .searchpage {
             position: absolute;
             top: 0;
@@ -21,17 +20,17 @@ const HTML_CONTENT = `
             height: 105vh;
             /*置顶*/
             z-index: 1000;
-            transition: height 0.6s ease-in-out, opacity 0.6s ease;
             /* 添加平滑动画 */
-            opacity: 1;
+            transition: height 0.4s ease-in-out, opacity 0.4s ease;
             /* 初始完全不透明 */
+            opacity: 1;
         }
         /* 当模块收起时的状态 */
         .searchpage.hide {
-            height: 50vh;
             /* 高度缩为 0 */
-            opacity: 0;
+            height: 50vh;
             /* 可选：渐隐 */
+            opacity: 0;
         }
         body {
             font-family: Arial, sans-serif;
@@ -46,7 +45,7 @@ const HTML_CONTENT = `
             /* 阻止文本自动换行 */
             white-space: nowrap;
         }
-        .searchpage h3 {
+        body h3 {
             position: absolute;
             top: 10px;
             left: 20px;
@@ -387,9 +386,9 @@ const HTML_CONTENT = `
     </style>
 </head>
 <body>
+    <h3>星际导航站</h3>
     <!-- 搜索页 -->
     <div class="searchpage">
-        <h3>星际导航站</h3>
         <div class="center-content">
             <!-- 一言模块 -->
             <p id="hitokoto">

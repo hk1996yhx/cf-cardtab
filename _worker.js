@@ -605,8 +605,8 @@ const HTML_CONTENT = `
             const img = document.createElement('img');
             img.src = searchUrl;  // 设置 src 为目标 URL，这个地址会返回图标
             img.alt = "Icon";  // 设置 alt 属性，用于图标未加载时的替代文本
-            img.style.width = "24px";  // 设置图标的宽度
-            img.style.height = "24px";  // 设置图标的高度
+            img.style.width = "30px";  // 设置图标的宽度
+            img.style.height = "30px";  // 设置图标的高度
             // 将 img 元素插入到按钮中
             searchButton.innerHTML = '';  // 清空现有内容
             searchButton.appendChild(img);  // 添加图标到按钮中
@@ -614,7 +614,7 @@ const HTML_CONTENT = `
                 // 判断按钮是否是选中的搜索引擎
                 if (btn.dataset.engine === engine) {
                     // 设置选中的样式
-                    btn.style.backgroundColor = '#4CAF50'; // 选中时的背景颜色
+                    btn.style.backgroundColor = '#7DF9FF';  // 选中时的背景颜色
                     btn.style.color = 'white'; // 选中时文字颜色
                     btn.style.borderColor = '#4CAF50'; // 选中时边框颜色
                 } else {

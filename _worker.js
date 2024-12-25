@@ -178,7 +178,6 @@ const HTML_CONTENT = `
             padding: 10px 20px;
             font-size: 16px;
             border: 1px solid #ddd;
-            background-color: #ffffff;
             color: white;
             border-radius: 30px;
             cursor: pointer;
@@ -190,12 +189,6 @@ const HTML_CONTENT = `
             color: white;
             border-color: #4CAF50;
             transform: translateY(-3px);
-            /* 按钮悬浮时上浮 */
-        }
-        .search-engine:active {
-            background-color: #45a049;
-            transform: translateY(1px);
-            /* 按钮点击时下沉 */
         }
         /* 主题切换按钮样式 */
         #theme-toggle {
@@ -563,6 +556,7 @@ const HTML_CONTENT = `
             document.querySelector('body h3').style.background = colorbackground;
             document.querySelector('.search-bar').style.background = colorbackground;
             document.querySelector('.search-bar button').style.background = colorbackground;
+            document.querySelector('.search-engine').style.background = colorbackground;
         }
         changeheadbackground();
         changebodybackground();
@@ -605,7 +599,18 @@ const HTML_CONTENT = `
         function setActiveEngine(engine) {
             currentEngine = engine;
             document.querySelectorAll('.search-engine').forEach(btn => {
-                btn.style.backgroundColor = btn.dataset.engine === engine ? '#c0c0c0' : '#f0f0f0';
+                // 判断按钮是否是选中的搜索引擎
+                if (btn.dataset.engine === engine) {
+                    // 设置选中的样式
+                    btn.style.backgroundColor = '#4CAF50'; // 选中时的背景颜色
+                    btn.style.color = 'white'; // 选中时文字颜色
+                    btn.style.borderColor = '#4CAF50'; // 选中时边框颜色
+                } else {
+                    // 设置未选中的样式
+                    btn.style.backgroundColor = colorbackground; // 未选中时的背景颜色
+                    btn.style.color = 'white'; // 选中时文字颜色
+                    btn.style.borderColor = '#ddd'; // 未选中时的边框颜色
+                }
             });
             logAction('设置搜索引擎', { engine });
         }

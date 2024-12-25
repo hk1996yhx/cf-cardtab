@@ -541,6 +541,8 @@ const HTML_CONTENT = `
         document.querySelector('.searchpage').style.background = headbackground;
         document.querySelector('#hitokoto').style.background = colorbackground;
         document.querySelector('body h3').style.background = colorbackground;
+        document.querySelector('.search-bar').style.background = colorbackground;
+        document.querySelector('.search-bar button').style.background = colorbackground;
         // 监听滚动事件
         const searchpage = document.querySelector('.searchpage');
         const content = document.querySelector('.content');

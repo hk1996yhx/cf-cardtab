@@ -21,6 +21,14 @@ const HTML_CONTENT = `
     <!-- 其他搜索引擎图标... -->
     <style>
         /* 全局样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e8f4ea;
+            transition: background-color 0.3s ease;
+        }
+        /* 搜索页样式 */
         .searchpage {
             position: absolute;
             top: 0;
@@ -35,33 +43,12 @@ const HTML_CONTENT = `
             /* 初始完全不透明 */
             opacity: 1;
         }
-        /* 当模块收起时的状态 */
+        /* 当搜索页收起时的状态 */
         .searchpage.hide {
             /* 高度缩为 0 */
             height: 0vh;
             /* 可选：渐隐 */
             opacity: 0;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #e8f4ea;
-            transition: background-color 0.3s ease;
-        }
-        #hitokoto {
-            /* 使用 fixed 使元素固定在浏览器窗口 */
-            position: fixed;
-            /* 元素距离顶部 0px */
-            top: 0;
-            /* 设置足够大的 z-index，确保它位于其他元素之上 */
-            z-index: 9999;
-            color: white;
-            padding: 10px;
-            background-size: cover;
-            /* 阻止文本自动换行 */
-            white-space: nowrap;
-            display: inline-block;
         }
         /* 中心内容样式 */
         .center-content {
@@ -78,56 +65,6 @@ const HTML_CONTENT = `
             padding: 10px;
             z-index: 9999;
             display: inline-block;
-        }
-        /* 管理员控制面板样式 */
-        .admin-controls {
-            /*置顶*/
-            z-index: 9999;
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            font-size: 60%;
-        }
-        /* 添加/删除控制按钮样式 */
-        .add-remove-controls {
-            display: none;
-            flex-direction: column;
-            position: fixed;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            align-items: center;
-            gap: 10px;
-        }
-        .round-btn {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            text-align: center;
-            font-size: 24px;
-            line-height: 40px;
-            cursor: pointer;
-            margin: 5px 0;
-        }
-        .add-btn {
-            order: 1;
-        }
-        .remove-btn {
-            order: 2;
-        }
-        .category-btn {
-            order: 3;
-        }
-        .remove-category-btn {
-            order: 4;
-        }
-        /* 主要内容区域样式 */
-        .content {
-            margin-top: 140px;
-            padding: 20px;
         }
         /* 搜索栏样式 */
         .search-container {
@@ -205,6 +142,71 @@ const HTML_CONTENT = `
             color: white;
             border-color: #4CAF50;
             transform: translateY(-3px);
+        }
+        /* hitokoto样式 */
+        #hitokoto {
+            /* 使用 fixed 使元素固定在浏览器窗口 */
+            position: fixed;
+            /* 元素距离顶部 0px */
+            top: 0;
+            /* 设置足够大的 z-index，确保它位于其他元素之上 */
+            z-index: 9999;
+            color: white;
+            padding: 10px;
+            background-size: cover;
+            /* 阻止文本自动换行 */
+            white-space: nowrap;
+            display: inline-block;
+        }
+        /* 管理员控制面板样式 */
+        .admin-controls {
+            /*置顶*/
+            z-index: 9999;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            font-size: 60%;
+        }
+        /* 添加/删除控制按钮样式 */
+        .add-remove-controls {
+            display: none;
+            flex-direction: column;
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            align-items: center;
+            gap: 10px;
+        }
+        .round-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            font-size: 24px;
+            line-height: 40px;
+            cursor: pointer;
+            margin: 5px 0;
+        }
+        .add-btn {
+            order: 1;
+        }
+        .remove-btn {
+            order: 2;
+        }
+        .category-btn {
+            order: 3;
+        }
+        .remove-category-btn {
+            order: 4;
+        }
+        /* 主要内容区域样式 */
+        .content {
+            margin-top: 140px;
+            padding: 20px;
         }
         /* 主题切换按钮样式 */
         #theme-toggle {

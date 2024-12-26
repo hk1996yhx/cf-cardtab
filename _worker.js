@@ -31,7 +31,7 @@ const HTML_CONTENT = `
         /* 搜索页样式 */
         .searchpage {
             position: absolute;
-            top: 0;
+            bottom: 0;
             left: 0;
             width: 100vw;
             /* 初始占满屏幕 */
@@ -39,7 +39,7 @@ const HTML_CONTENT = `
             /*置顶*/
             z-index: 9990;
             /* 添加平滑动画 */
-            transition: height 1.4s ease-in-out, opacity 1.4s ease;
+            transition: height 1s ease-in-out, opacity 1s ease;
             /* 初始完全不透明 */
             opacity: 1;
         }
@@ -172,7 +172,7 @@ const HTML_CONTENT = `
             margin-top: 140px;
             padding: 20px;
             position: absolute;
-            bottom: 0;
+            top: 0;
             /* 设置初始位置为底部 */
             left: 0;
             width: 100vw;
@@ -180,13 +180,13 @@ const HTML_CONTENT = `
             /* 初始高度为 0 */
             z-index: 9990;
             /* 添加平滑动画 */
-            transition: height 1.4s ease-in-out, opacity 1.4s ease;
+            transition: height 1s ease-in-out, opacity 1s ease;
             /* 初始完全不透明 */
             opacity: 0;
         }
         /* 标签页展开样式 */
         .content.show {
-            height: 105vh;
+            height: 100vh;
             /* 展开时高度为 100vh */
             opacity: 1;
         }
@@ -608,7 +608,7 @@ const HTML_CONTENT = `
                 if (scrollPosition >= 50) { // 如果滚动超过 50 像素
                     searchpage.classList.add('hide'); // 添加类名，触发动画
                     content.classList.add('show'); // 显示主内容
-                    window.scrollTo(0, 2);
+                    //window.scrollTo(0, 2);
                 } else if (scrollPosition <= 1) {
                     searchpage.classList.remove('hide'); // 恢复模块
                     content.classList.remove('show'); // 隐藏主内容

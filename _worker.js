@@ -41,7 +41,6 @@ const HTML_CONTENT = `
             bottom: 0;
             left: 0;
             height: 100vh;
-            width: 100vh;
             opacity: 1;
             z-index: 999;
             transition: height 0.8s ease-in-out, opacity 2s ease;
@@ -54,7 +53,7 @@ const HTML_CONTENT = `
         }
         #fanye-button {
             position: absolute;
-            top: 110%;
+            top: 105%;
             left: 50%;
             font-size: 16px;
             border: 1px solid rgba(0, 0, 0, 0.2);

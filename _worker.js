@@ -29,7 +29,7 @@ const HTML_CONTENT = `
             /* 初始占满屏幕 */
             height: 105vh;
             /*置顶*/
-            z-index: 9998;
+            z-index: 9990;
             /* 添加平滑动画 */
             transition: height 0.4s ease-in-out, opacity 0.4s ease;
             /* 初始完全不透明 */
@@ -55,7 +55,7 @@ const HTML_CONTENT = `
             /* 元素距离顶部 0px */
             top: 0;
             /* 设置足够大的 z-index，确保它位于其他元素之上 */
-            z-index: 19999;
+            z-index: 9999;
             color: white;
             padding: 10px;
             background-size: cover;

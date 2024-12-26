@@ -40,15 +40,18 @@ const HTML_CONTENT = `
             position: absolute;
             bottom: 0;
             left: 0;
-            height: 110%;
+            height: 120%;
             width: 100%;
             transition: height 0.8s ease-in-out, opacity 2s ease;
             opacity: 1;
+            /*置顶*/
+            z-index: 999;
         }
         /* 当搜索页收起时的状态 */
         .searchpage.hide {
             height: 0%;
             opacity: 0;
+            z-index: -1;
         }
         /* 中心内容样式 */
         .center-content {

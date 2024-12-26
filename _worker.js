@@ -40,20 +40,14 @@ const HTML_CONTENT = `
             position: absolute;
             bottom: 0;
             left: 0;
-            height: 120%;
-            /* 你可以根据需要调整这个高度 */
+            height: 110%;
             width: 100%;
-            overflow-y: auto;
-            /* 允许垂直滚动 */
             transition: height 0.8s ease-in-out, opacity 2s ease;
             opacity: 1;
         }
         /* 当搜索页收起时的状态 */
         .searchpage.hide {
-            /* 高度缩为 0 */
             height: 0%;
-            width: 0%;
-            /* 可选：渐隐 */
             opacity: 0;
         }
         /* 中心内容样式 */
@@ -69,7 +63,6 @@ const HTML_CONTENT = `
         .center-content h3 {
             color: white;
             padding: 10px;
-            /* z-index: 9999; */
             display: inline-block;
         }
         /* 搜索栏样式 */
@@ -176,15 +169,10 @@ const HTML_CONTENT = `
         /* 标签页样式 */
         .content {
             position: absolute;
-            /* margin-top: 100px; */
             padding: 20px;
             top: 0;
-            /* 设置初始位置为底部 */
             left: 0;
-            /* 初始高度为 0 */
             height: 0%;
-            width: 0%;
-            /* z-index: 9990; */
             /* 添加平滑动画 */
             transition: height 0.8s ease-in-out, opacity 1s ease;
             /* 初始完全不透明 */
@@ -193,7 +181,6 @@ const HTML_CONTENT = `
         /* 标签页展开样式 */
         .content.show {
             height: 100%;
-            width: 100%;
             opacity: 1;
         }
         /* 添加/删除控制按钮样式 */
@@ -612,8 +599,8 @@ const HTML_CONTENT = `
             debounceTimeout = setTimeout(() => {
                 const scrollPosition = window.scrollY; // 当前滚动的像素值
                 if (scrollPosition >= 30) { // 如果滚动超过 50 像素
-                    searchpage.classList.add('hide'); // 添加类名，触发动画
                     content.classList.add('show'); // 显示主内容
+                    searchpage.classList.add('hide'); // 添加类名，触发动画
                 } else if (scrollPosition <= 1) {
                     searchpage.classList.remove('hide'); // 恢复模块
                     content.classList.remove('show'); // 隐藏主内容

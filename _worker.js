@@ -169,7 +169,7 @@ const HTML_CONTENT = `
         }
         /* 标签页样式 */
         .content {
-            margin-top: 140px;
+            margin-top: 100px;
             padding: 20px;
             position: absolute;
             top: 0;
@@ -180,7 +180,7 @@ const HTML_CONTENT = `
             /* 初始高度为 0 */
             z-index: 9990;
             /* 添加平滑动画 */
-            transition: height 0.8s ease-in-out, opacity 2s ease;
+            transition: height 0.8s ease-in-out, opacity 1s ease;
             /* 初始完全不透明 */
             opacity: 0;
         }
@@ -607,7 +607,7 @@ const HTML_CONTENT = `
                 const scrollPosition = window.scrollY; // 当前滚动的像素值
                 if (scrollPosition >= 30) { // 如果滚动超过 50 像素
                     searchpage.classList.add('hide'); // 添加类名，触发动画
-                    content.classList.add('show'); // 显示主内容 
+                    content.classList.add('show'); // 显示主内容
                 } else if (scrollPosition <= 1) {
                     searchpage.classList.remove('hide'); // 恢复模块
                     content.classList.remove('show'); // 隐藏主内容

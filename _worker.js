@@ -41,10 +41,10 @@ const HTML_CONTENT = `
             bottom: 0;
             left: 0;
             /* 初始占满屏幕 */
-            height: 100vh;
-            width: 100vw;
+            height: 110vh;
+            /* width: 100vw; */
             /*置顶*/
-            z-index: 9990;
+            /* z-index: 9990; */
             /* 添加平滑动画 */
             transition: height 0.8s ease-in-out, opacity 2s ease;
             /* 初始完全不透明 */
@@ -70,7 +70,7 @@ const HTML_CONTENT = `
         .center-content h3 {
             color: white;
             padding: 10px;
-            z-index: 9999;
+            /* z-index: 9999; */
             display: inline-block;
         }
         /* 搜索栏样式 */

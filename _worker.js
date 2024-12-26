@@ -34,7 +34,7 @@ const HTML_CONTENT = `
             bottom: 0;
             left: 0;
             /* 初始占满屏幕 */
-            height: 120vh;
+            height: 100vh;
             width: 100vw;
             /*置顶*/
             z-index: 9990;

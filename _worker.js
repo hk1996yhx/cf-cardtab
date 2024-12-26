@@ -40,7 +40,7 @@ const HTML_CONTENT = `
             position: absolute;
             bottom: 0;
             left: 0;
-            height: 150vh;
+            height: 90vh;
             width: 100%;
             opacity: 1;
             z-index: 999;

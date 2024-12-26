@@ -50,7 +50,12 @@ const HTML_CONTENT = `
             transition: background-color 0.3s ease;
         }
         #hitokoto {
-            z-index: 9999;
+            /* 使用 fixed 使元素固定在浏览器窗口 */
+            position: fixed;
+            /* 元素距离顶部 0px */
+            top: 0;
+            /* 设置足够大的 z-index，确保它位于其他元素之上 */
+            z-index: 19999;
             color: white;
             padding: 10px;
             background-size: cover;
@@ -445,7 +450,6 @@ const HTML_CONTENT = `
         <p id="hitokoto">
             <a href="#" id="hitokoto_text"></a>
         </p>
-        <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
         <!-- 管理员控制面板 -->
         <div class="admin-controls">
             <input type="password" id="admin-password" placeholder="输入密码">
@@ -512,6 +516,7 @@ const HTML_CONTENT = `
             </div>
         </div>
     </div>
+    <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
     <script>
         //动态设置背景及颜色
         function generateRandomBackgroundImage() {

@@ -608,6 +608,7 @@ const HTML_CONTENT = `
                 if (scrollPosition >= 50) { // 如果滚动超过 50 像素
                     searchpage.classList.add('hide'); // 添加类名，触发动画
                     content.classList.add('show'); // 显示主内容
+                    window.scrollTo(0, 2);
                 } else if (scrollPosition <= 1) {
                     searchpage.classList.remove('hide'); // 恢复模块
                     content.classList.remove('show'); // 隐藏主内容

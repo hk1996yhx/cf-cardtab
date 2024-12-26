@@ -40,14 +40,12 @@ const HTML_CONTENT = `
             position: absolute;
             bottom: 0;
             left: 0;
-            /* 初始占满屏幕 */
-            height: 110vh;
+            height: 120vh;
+            /* 你可以根据需要调整这个高度 */
             width: 100vw;
-            /*置顶*/
-            /* z-index: 9990; */
-            /* 添加平滑动画 */
+            overflow-y: auto;
+            /* 允许垂直滚动 */
             transition: height 0.8s ease-in-out, opacity 2s ease;
-            /* 初始完全不透明 */
             opacity: 1;
         }
         /* 当搜索页收起时的状态 */

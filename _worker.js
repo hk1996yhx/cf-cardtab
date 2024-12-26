@@ -53,8 +53,9 @@ const HTML_CONTENT = `
             z-index: -1;
         }
         #fanye-button {
-            bottom: 0;
-            padding-top: 200px;
+            position: absolute;
+            top: 110%;
+            left: 50%;
             font-size: 16px;
             border: 1px solid rgba(0, 0, 0, 0.2);
             background-color: rgba(76, 175, 80, 0.8);

@@ -40,13 +40,12 @@ const HTML_CONTENT = `
             position: absolute;
             bottom: 0;
             left: 0;
-            height: 100%;
-            /* 设置初始高度为视窗高度 */
+            height: 100vh;
             width: 100%;
             transition: height 0.8s ease-in-out, opacity 2s ease;
             opacity: 1;
             z-index: 999;
-            padding-bottom: 100px;
+            padding-bottom: 500px;
         }
         /* 当搜索页收起时的状态 */
         .searchpage.hide {
@@ -177,9 +176,7 @@ const HTML_CONTENT = `
             top: 0;
             left: 0;
             height: 0%;
-            /* 添加平滑动画 */
             transition: height 0.8s ease-in-out, opacity 1s ease;
-            /* 初始完全不透明 */
             opacity: 0;
             padding-top: 100px;
             padding-bottom: 100px;

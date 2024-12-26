@@ -52,8 +52,10 @@ const HTML_CONTENT = `
         #hitokoto {
             color: white;
             padding: 10px;
+            background-size: cover;
             /* 阻止文本自动换行 */
             white-space: nowrap;
+            z-index: 9999;
         }
         /* 中心内容样式 */
         .center-content {
@@ -66,11 +68,8 @@ const HTML_CONTENT = `
             text-align: center;
         }
         .center-content h3 {
-            position: absolute;
             color: white;
-            top: 10px;
-            left: 20px;
-            margin: 0;
+            padding: 10px;
             z-index: 9999;
         }
         /* 管理员控制面板样式 */

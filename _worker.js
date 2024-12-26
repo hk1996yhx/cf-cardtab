@@ -182,10 +182,10 @@ const HTML_CONTENT = `
             top: 0;
             /* 设置初始位置为底部 */
             left: 0;
+            /* 初始高度为 0 */
             height: 0vh;
             width: 100vw;
-            /* 初始高度为 0 */
-            z-index: 9990;
+            /* z-index: 9990; */
             /* 添加平滑动画 */
             transition: height 0.8s ease-in-out, opacity 1s ease;
             /* 初始完全不透明 */

@@ -35,11 +35,11 @@ const HTML_CONTENT = `
             left: 0;
             width: 100vw;
             /* 初始占满屏幕 */
-            height: 105vh;
+            height: 110vh;
             /*置顶*/
             z-index: 9990;
             /* 添加平滑动画 */
-            transition: height 1s ease-in-out, opacity 1s ease;
+            transition: height 0.8s ease-in-out, opacity 2s ease;
             /* 初始完全不透明 */
             opacity: 1;
         }
@@ -180,7 +180,7 @@ const HTML_CONTENT = `
             /* 初始高度为 0 */
             z-index: 9990;
             /* 添加平滑动画 */
-            transition: height 1s ease-in-out, opacity 1s ease;
+            transition: height 0.8s ease-in-out, opacity 2s ease;
             /* 初始完全不透明 */
             opacity: 0;
         }
@@ -605,7 +605,7 @@ const HTML_CONTENT = `
             clearTimeout(debounceTimeout);
             debounceTimeout = setTimeout(() => {
                 const scrollPosition = window.scrollY; // 当前滚动的像素值
-                if (scrollPosition >= 50) { // 如果滚动超过 50 像素
+                if (scrollPosition >= 30) { // 如果滚动超过 50 像素
                     searchpage.classList.add('hide'); // 添加类名，触发动画
                     content.classList.add('show'); // 显示主内容
                     //window.scrollTo(0, 2);

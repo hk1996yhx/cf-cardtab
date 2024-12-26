@@ -33,9 +33,9 @@ const HTML_CONTENT = `
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 100vw;
             /* 初始占满屏幕 */
-            height: 110vh;
+            height: 120vh;
+            width: 100vw;
             /*置顶*/
             z-index: 9990;
             /* 添加平滑动画 */
@@ -175,8 +175,8 @@ const HTML_CONTENT = `
             top: 0;
             /* 设置初始位置为底部 */
             left: 0;
-            width: 100vw;
             height: 0vh;
+            width: 100vw;
             /* 初始高度为 0 */
             z-index: 9990;
             /* 添加平滑动画 */

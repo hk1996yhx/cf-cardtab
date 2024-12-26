@@ -40,9 +40,9 @@ const HTML_CONTENT = `
             position: absolute;
             bottom: 0;
             left: 0;
-            height: 120vh;
+            height: 120%;
             /* 你可以根据需要调整这个高度 */
-            width: 100vw;
+            width: 100%;
             overflow-y: auto;
             /* 允许垂直滚动 */
             transition: height 0.8s ease-in-out, opacity 2s ease;
@@ -51,7 +51,8 @@ const HTML_CONTENT = `
         /* 当搜索页收起时的状态 */
         .searchpage.hide {
             /* 高度缩为 0 */
-            height: 0vh;
+            height: 0%;
+            width: 0%;
             /* 可选：渐隐 */
             opacity: 0;
         }
@@ -181,8 +182,8 @@ const HTML_CONTENT = `
             /* 设置初始位置为底部 */
             left: 0;
             /* 初始高度为 0 */
-            height: 0vh;
-            width: 100vw;
+            height: 0%;
+            width: 0%;
             /* z-index: 9990; */
             /* 添加平滑动画 */
             transition: height 0.8s ease-in-out, opacity 1s ease;
@@ -191,8 +192,8 @@ const HTML_CONTENT = `
         }
         /* 标签页展开样式 */
         .content.show {
-            height: 100vh;
-            /* 展开时高度为 100vh */
+            height: 100%;
+            width: 100%;
             opacity: 1;
         }
         /* 添加/删除控制按钮样式 */

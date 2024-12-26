@@ -41,6 +41,7 @@ const HTML_CONTENT = `
             bottom: 0;
             left: 0;
             height: 100vh;
+            width: 100%;
             opacity: 1;
             z-index: 999;
             transition: height 0.8s ease-in-out, opacity 2s ease;

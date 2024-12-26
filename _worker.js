@@ -40,11 +40,13 @@ const HTML_CONTENT = `
             position: absolute;
             bottom: 0;
             left: 0;
-            height: 120%;
+            height: 100vh;
+            /* 设置初始高度为视窗高度 */
             width: 100%;
+            overflow-y: auto;
+            /* 允许垂直滚动 */
             transition: height 0.8s ease-in-out, opacity 2s ease;
             opacity: 1;
-            /*置顶*/
             z-index: 999;
         }
         /* 当搜索页收起时的状态 */
@@ -597,6 +599,7 @@ const HTML_CONTENT = `
         const searchpage = document.querySelector('.searchpage');
         const content = document.querySelector('.content');
         let debounceTimeout;
+        let isContentVisible = false
         window.addEventListener('scroll', () => {
             clearTimeout(debounceTimeout);
             debounceTimeout = setTimeout(() => {
@@ -604,9 +607,12 @@ const HTML_CONTENT = `
                 if (scrollPosition >= 30) { // 如果滚动超过 50 像素
                     content.classList.add('show'); // 显示主内容
                     searchpage.classList.add('hide'); // 添加类名，触发动画
-                } else if (scrollPosition <= 1) {
+                    window.scrollTo(0, 2);
+                    isContentVisible = true
+                } else if (scrollPosition <= 1 && isContentVisible) {
                     searchpage.classList.remove('hide'); // 恢复模块
                     content.classList.remove('show'); // 隐藏主内容
+                    isContentVisible = false
                 }
             }, 100); // 100ms 后执行
         });

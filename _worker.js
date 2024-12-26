@@ -40,7 +40,7 @@ const HTML_CONTENT = `
             position: absolute;
             bottom: 0;
             left: 0;
-            height: 110vh;
+            height: 90vh;
             /* 设置初始高度为视窗高度 */
             width: 100%;
             overflow-y: auto;

@@ -40,17 +40,29 @@ const HTML_CONTENT = `
             position: absolute;
             bottom: 0;
             left: 0;
-            height: 90vh;
-            width: 100%;
+            height: 100vh;
+            width: 100vh;
             opacity: 1;
             z-index: 999;
             transition: height 0.8s ease-in-out, opacity 2s ease;
         }
         /* 当搜索页收起时的状态 */
         .searchpage.hide {
-            height: 0%;
+            height: 0vh;
             opacity: 0;
             z-index: -1;
+        }
+        #fanye-button {
+            bottom: 0;
+            padding-top: 200px;
+            font-size: 16px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            background-color: rgba(76, 175, 80, 0.8);
+            /* 半透明绿色按钮 */
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.1s ease;
         }
         /* 中心内容样式 */
         .center-content {
@@ -174,7 +186,7 @@ const HTML_CONTENT = `
             padding: 20px;
             top: 0;
             left: 0;
-            height: 0%;
+            height: 0vh;
             transition: height 0.8s ease-in-out, opacity 1s ease;
             opacity: 0;
             padding-top: 100px;
@@ -182,7 +194,7 @@ const HTML_CONTENT = `
         }
         /* 标签页展开样式 */
         .content.show {
-            height: 100%;
+            height: 100vh;
             opacity: 1;
         }
         /* 添加/删除控制按钮样式 */
@@ -491,6 +503,7 @@ const HTML_CONTENT = `
                     </div>
                 </div>
             </div>
+            <button id="fanye-button">下一页</button>
         </div>
         <!-- 书签 -->
         <div class="content">

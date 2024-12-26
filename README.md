@@ -13,8 +13,7 @@
 ##### 3、统一主题色
 ##### 4、图标预加载
 ##### 5、搜索页布局已经全部完善
-https://github.com/sy-records/GetFavicon
-##### 6、更换获取网站图标接口,项目地址：([【Github】](https://github.com/sy-records/GetFavicon))  感谢上述接口作者提供的服务
+##### 6、更换获取网站图标接口,项目地址：([sy-records/GetFavicon](https://github.com/sy-records/GetFavicon))  感谢上述接口作者提供的服务
 #### 2024.12.05 更新：
 ##### 1、加入acg随机背景美化,用的是cf图床
 ##### 2、加入了随机主题色,但是懒得改太多,很多bug

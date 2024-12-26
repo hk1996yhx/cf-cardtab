@@ -167,6 +167,28 @@ const HTML_CONTENT = `
             right: 10px;
             font-size: 60%;
         }
+        /* 标签页样式 */
+        .content {
+            margin-top: 140px;
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            /* 初始占满屏幕 */
+            height: 0vh;
+            /*置顶*/
+            z-index: 9990;
+            /* 添加平滑动画 */
+            transition: height 0.4s ease-in-out, opacity 0.4s ease;
+            /* 初始完全不透明 */
+            opacity: 0;
+        }
+        /* 标签页展开样式 */
+        .content.show {
+            height: 100vh;
+            opacity: 1;
+        }
         /* 添加/删除控制按钮样式 */
         .add-remove-controls {
             display: none;
@@ -202,11 +224,6 @@ const HTML_CONTENT = `
         }
         .remove-category-btn {
             order: 4;
-        }
-        /* 主要内容区域样式 */
-        .content {
-            margin-top: 140px;
-            padding: 20px;
         }
         /* 主题切换按钮样式 */
         #theme-toggle {
@@ -482,13 +499,6 @@ const HTML_CONTENT = `
         <!-- 书签 -->
         <div class="content">
             <!-- 类别目录 -->
-            <!-- 添加/删除控制按钮 -->
-            <div class="add-remove-controls">
-                <button class="round-btn add-btn" onclick="showAddDialog()">+</button>
-                <button class="round-btn remove-btn" onclick="toggleRemoveMode()">-</button>
-                <button class="round-btn category-btn" onclick="addCategory()">C+</button>
-                <button class="round-btn remove-category-btn" onclick="toggleRemoveCategory()">C-</button>
-            </div>
             <!-- 分类和卡片容器 -->
             <div id="sections-container"></div>
             <!-- 主题切换按钮 -->
@@ -509,6 +519,13 @@ const HTML_CONTENT = `
                     <button onclick="addLink()">确定</button>
                     <button onclick="hideAddDialog()">取消</button>
                 </div>
+            </div>
+            <!-- 添加/删除控制按钮 -->
+            <div class="add-remove-controls">
+                <button class="round-btn add-btn" onclick="showAddDialog()">+</button>
+                <button class="round-btn remove-btn" onclick="toggleRemoveMode()">-</button>
+                <button class="round-btn category-btn" onclick="addCategory()">C+</button>
+                <button class="round-btn remove-category-btn" onclick="toggleRemoveCategory()">C-</button>
             </div>
             <!-- 版权信息 -->
             <div id="copyright" class="copyright">

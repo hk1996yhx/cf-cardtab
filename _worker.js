@@ -42,7 +42,7 @@ const HTML_CONTENT = `
             left: 0;
             /* 初始占满屏幕 */
             height: 110vh;
-            /* width: 100vw; */
+            width: 100vw;
             /*置顶*/
             /* z-index: 9990; */
             /* 添加平滑动画 */
@@ -176,9 +176,9 @@ const HTML_CONTENT = `
         }
         /* 标签页样式 */
         .content {
+            position: absolute;
             /* margin-top: 100px; */
             padding: 20px;
-            position: absolute;
             top: 0;
             /* 设置初始位置为底部 */
             left: 0;

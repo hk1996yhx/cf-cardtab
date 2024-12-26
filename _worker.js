@@ -590,7 +590,7 @@ const HTML_CONTENT = `
                 if (scrollPosition >= 50) { // 如果滚动超过 50 像素
                     searchpage.classList.add('hide'); // 添加类名，触发动画
                     content.classList.add('show'); // 显示主内容
-                } else if (scrollPosition <= 5) {
+                } else if (scrollPosition <= 2) {
                     searchpage.classList.remove('hide'); // 恢复模块
                     content.classList.remove('show'); // 隐藏主内容
                 }
@@ -941,6 +941,7 @@ const HTML_CONTENT = `
                     titleContainer.appendChild(editBtn);
                 }
             });
+            window.scrollTo(0, 5);
             logAction('加载分类和链接', {
                 isAdmin: isAdmin,
                 linkCount: links.length,

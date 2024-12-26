@@ -40,7 +40,7 @@ const HTML_CONTENT = `
             position: absolute;
             bottom: 0;
             left: 0;
-            height: 100vh;
+            height: 110vh;
             /* 设置初始高度为视窗高度 */
             width: 100%;
             overflow-y: auto;
@@ -185,7 +185,7 @@ const HTML_CONTENT = `
         }
         /* 标签页展开样式 */
         .content.show {
-            height: 100%;
+            height: 110vh;
             opacity: 1;
         }
         /* 添加/删除控制按钮样式 */
@@ -604,7 +604,7 @@ const HTML_CONTENT = `
             clearTimeout(debounceTimeout);
             debounceTimeout = setTimeout(() => {
                 const scrollPosition = window.scrollY; // 当前滚动的像素值
-                if (scrollPosition >= 30) { // 如果滚动超过 50 像素
+                if (scrollPosition >= 30 && !isContentVisible) { // 如果滚动超过 50 像素
                     content.classList.add('show'); // 显示主内容
                     searchpage.classList.add('hide'); // 添加类名，触发动画
                     window.scrollTo(0, 2);

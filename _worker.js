@@ -40,12 +40,11 @@ const HTML_CONTENT = `
             position: absolute;
             bottom: 0;
             left: 0;
-            height: 100vh;
+            height: 150vh;
             width: 100%;
-            transition: height 0.8s ease-in-out, opacity 2s ease;
             opacity: 1;
             z-index: 999;
-            padding-bottom: 500px;
+            transition: height 0.8s ease-in-out, opacity 2s ease;
         }
         /* 当搜索页收起时的状态 */
         .searchpage.hide {
@@ -56,7 +55,7 @@ const HTML_CONTENT = `
         /* 中心内容样式 */
         .center-content {
             position: absolute;
-            top: 50%;
+            top: 20%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 100%;

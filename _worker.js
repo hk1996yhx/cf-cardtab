@@ -39,7 +39,7 @@ const HTML_CONTENT = `
             /*置顶*/
             z-index: 9990;
             /* 添加平滑动画 */
-            transition: height 0.4s ease-in-out, opacity 0.4s ease;
+            transition: height 1.4s ease-in-out, opacity 1.4s ease;
             /* 初始完全不透明 */
             opacity: 1;
         }
@@ -180,13 +180,13 @@ const HTML_CONTENT = `
             /* 初始高度为 0 */
             z-index: 9990;
             /* 添加平滑动画 */
-            transition: height 0.4s ease-in-out, opacity 0.4s ease;
+            transition: height 1.4s ease-in-out, opacity 1.4s ease;
             /* 初始完全不透明 */
             opacity: 0;
         }
         /* 标签页展开样式 */
         .content.show {
-            height: 100vh;
+            height: 105vh;
             /* 展开时高度为 100vh */
             opacity: 1;
         }

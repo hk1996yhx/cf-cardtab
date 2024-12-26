@@ -172,12 +172,12 @@ const HTML_CONTENT = `
             margin-top: 140px;
             padding: 20px;
             position: absolute;
-            top: 0;
+            bottom: 0;
+            /* 设置初始位置为底部 */
             left: 0;
             width: 100vw;
-            /* 初始占满屏幕 */
             height: 0vh;
-            /*置顶*/
+            /* 初始高度为 0 */
             z-index: 9990;
             /* 添加平滑动画 */
             transition: height 0.4s ease-in-out, opacity 0.4s ease;
@@ -187,6 +187,7 @@ const HTML_CONTENT = `
         /* 标签页展开样式 */
         .content.show {
             height: 100vh;
+            /* 展开时高度为 100vh */
             opacity: 1;
         }
         /* 添加/删除控制按钮样式 */

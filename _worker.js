@@ -49,14 +49,6 @@ const HTML_CONTENT = `
             background-color: #e8f4ea;
             transition: background-color 0.3s ease;
         }
-        body h3 {
-            position: absolute;
-            color: white;
-            top: 10px;
-            left: 20px;
-            margin: 0;
-            z-index: 9999;
-        }
         #hitokoto {
             color: white;
             padding: 10px;
@@ -72,6 +64,14 @@ const HTML_CONTENT = `
             width: 100%;
             max-width: 600px;
             text-align: center;
+        }
+        .center-content h3 {
+            position: absolute;
+            color: white;
+            top: 10px;
+            left: 20px;
+            margin: 0;
+            z-index: 9999;
         }
         /* 管理员控制面板样式 */
         .admin-controls {
@@ -440,7 +440,11 @@ const HTML_CONTENT = `
 </head>
 <body>
     <div class="allbodydiv">
-        <h3>星际导航站</h3>
+        <!-- 一言模块 -->
+        <p id="hitokoto">
+            <a href="#" id="hitokoto_text"></a>
+        </p>
+        <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
         <!-- 管理员控制面板 -->
         <div class="admin-controls">
             <input type="password" id="admin-password" placeholder="输入密码">
@@ -450,11 +454,7 @@ const HTML_CONTENT = `
         <!-- 搜索页 -->
         <div class="searchpage">
             <div class="center-content">
-                <!-- 一言模块 -->
-                <p id="hitokoto">
-                    <a href="#" id="hitokoto_text"></a>
-                </p>
-                <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+                <h3>星际导航站</h3>
                 <!-- 搜索栏 -->
                 <div class="search-container">
                     <div class="search-bar">
@@ -563,7 +563,7 @@ const HTML_CONTENT = `
         }
         function changecolorbackground() {
             document.querySelector('#hitokoto').style.background = colorbackground;
-            document.querySelector('body h3').style.background = colorbackground;
+            document.querySelector('.center-content h3').style.background = colorbackground;
             document.querySelector('.search-bar').style.background = colorbackground;
             document.querySelector('.search-bar button').style.background = colorbackground;
             document.querySelector('.search-engine').style.background = colorbackground;

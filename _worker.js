@@ -40,14 +40,13 @@ const HTML_CONTENT = `
             position: absolute;
             bottom: 0;
             left: 0;
-            height: 90vh;
+            height: 100%;
             /* 设置初始高度为视窗高度 */
             width: 100%;
-            overflow-y: auto;
-            /* 允许垂直滚动 */
             transition: height 0.8s ease-in-out, opacity 2s ease;
             opacity: 1;
             z-index: 999;
+            padding-bottom: 100px;
         }
         /* 当搜索页收起时的状态 */
         .searchpage.hide {
@@ -182,10 +181,12 @@ const HTML_CONTENT = `
             transition: height 0.8s ease-in-out, opacity 1s ease;
             /* 初始完全不透明 */
             opacity: 0;
+            padding-top: 100px;
+            padding-bottom: 100px;
         }
         /* 标签页展开样式 */
         .content.show {
-            height: 110vh;
+            height: 100%;
             opacity: 1;
         }
         /* 添加/删除控制按钮样式 */

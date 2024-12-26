@@ -607,8 +607,7 @@ const HTML_CONTENT = `
                 const scrollPosition = window.scrollY; // 当前滚动的像素值
                 if (scrollPosition >= 30) { // 如果滚动超过 50 像素
                     searchpage.classList.add('hide'); // 添加类名，触发动画
-                    content.classList.add('show'); // 显示主内容
-                    //window.scrollTo(0, 2);
+                    content.classList.add('show'); // 显示主内容 
                 } else if (scrollPosition <= 1) {
                     searchpage.classList.remove('hide'); // 恢复模块
                     content.classList.remove('show'); // 隐藏主内容
@@ -899,6 +898,7 @@ const HTML_CONTENT = `
         }
         // 分类初始化设置
         function loadSections() {
+            const scrollPosition = Math.max(window.scrollY, 0);
             const container = document.getElementById('sections-container');
             container.innerHTML = '';
             Object.keys(categories).forEach(category => {
@@ -960,7 +960,7 @@ const HTML_CONTENT = `
                     titleContainer.appendChild(editBtn);
                 }
             });
-            window.scrollTo(0, 2);
+            window.scrollTo(0, scrollPosition);
             logAction('加载分类和链接', {
                 isAdmin: isAdmin,
                 linkCount: links.length,

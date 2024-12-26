@@ -176,7 +176,7 @@ const HTML_CONTENT = `
         }
         /* 标签页样式 */
         .content {
-            margin-top: 100px;
+            /* margin-top: 100px; */
             padding: 20px;
             position: absolute;
             top: 0;

@@ -660,18 +660,8 @@ const HTML_CONTENT = `
             const blue = Math.floor(Math.random() * 256);
             return 'rgba(' + red + ',' + green + ',' + blue + ',0.7)';
         }
-        function generateRandomtextColor(rgba) {
-            // 确保 rgba 格式有效
-            if (!rgba || typeof rgba !== 'string') {
-                console.error('Invalid rgba format:', rgba);
-                return '#000000';  // 默认返回黑色
-            }
+        function generateRandomtextColor(rgba) { // 提取rgba值
             const values = rgba.match(/\d+/g);
-            // 如果没有匹配到 RGB 值，则返回默认黑色
-            if (!values || values.length < 3) {
-                console.error('Invalid rgba values:', rgba);
-                return '#000000';  // 默认返回黑色
-            }
             const red = parseInt(values[0]);
             const green = parseInt(values[1]);
             const blue = parseInt(values[2]);

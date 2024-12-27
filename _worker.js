@@ -1152,7 +1152,7 @@ const HTML_CONTENT = `
                     // card.style.backgroundColor = '#ecf0f1';  // 默认卡片背景颜色
                     card.style.backgroundColor = colorbackground; 
                 }
-                card.style.color = '#333';
+                card.style.color = '#ffffff';
                 card.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
             }
             // 你还可以设置其他样式

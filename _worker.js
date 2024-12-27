@@ -690,7 +690,7 @@ const HTML_CONTENT = `
             return compHex;
         }
         var colorbackground = generateRandomHex();
-        var textcolor = getComplementaryColor(colorbackground);
+        var textcolor = getBrightComplementaryColor(colorbackground);
         var headbackground = generateRandomBackgroundImage();
         var bodybackground = generateRandomBackgroundImage();
         function changeheadbackground() {

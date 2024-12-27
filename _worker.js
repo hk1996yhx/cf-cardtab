@@ -249,7 +249,7 @@ const HTML_CONTENT = `
         #theme-toggle:hover {
             background-color: #007bff;
         }
-        /* 对话框样式 */
+        /* 对话框覆盖层样式 */
         #dialog-overlay {
             display: none;
             position: fixed;
@@ -257,21 +257,74 @@ const HTML_CONTENT = `
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            /* 稍微深一点的覆盖层 */
+            background-color: rgba(0, 0, 0, 0.7);
+            /* 使用弹性盒子居中 */
+            display: flex;
             justify-content: center;
             align-items: center;
         }
+        /* 对话框样式 */
         #dialog-box {
-            background-color: white;
-            padding: 20px;
-            border-radius: 5px;
-            width: 300px;
+            /* 柔和的白色 */
+            background-color: #f9f9f9;
+            /* 更均衡的填充 */
+            padding: 25px;
+            /* 更圆润的边角 */
+            border-radius: 10px;
+            /* 添加细微的阴影 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* 稍宽一些 */
+            width: 320px;
         }
+        /* 输入框和选择框样式 */
         #dialog-box input,
         #dialog-box select {
             width: 100%;
-            margin-bottom: 10px;
-            padding: 5px;
+            /* 元素之间的间距更大 */
+            margin-bottom: 15px;
+            /* 填充更多 */
+            padding: 8px;
+            /* 浅灰色边框 */
+            border: 1px solid #ccc;
+            /* 圆润的边角 */
+            border-radius: 5px;
+            /* 确保填充不影响宽度 */
+            box-sizing: border-box;
+        }
+        /* 按钮样式 */
+        #dialog-box button {
+            width: 48%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        /* 确定按钮 */
+        #dialog-box button:nth-child(1) {
+            /* 绿色背景 */
+            background-color: #4CAF50;
+            /* 白色文本 */
+            color: white;
+        }
+        /* 取消按钮 */
+        #dialog-box button:nth-child(2) {
+            /* 红色背景 */
+            background-color: #f44336;
+            /* 白色文本 */
+            color: white;
+        }
+        /* 私密链接容器 */
+        .private-link-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        /* 私密复选框 */
+        #private-checkbox {
+            /* 标签和复选框之间的间距 */
+            margin-left: 10px;
         }
         /* 分类和卡片样式 */
         .section {

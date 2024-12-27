@@ -701,8 +701,8 @@ const HTML_CONTENT = `
             document.querySelector('#hitokoto').style.color = textcolor;
             document.querySelector('.center-content h3').style.background = colorbackground;
             document.querySelector('.center-content h3').style.color = textcolor;
-            document.querySelector('.search-bar').style.background = colorbackground; 
-            document.querySelector('.search-bar button').style.background = textcolor; 
+            document.querySelector('.search-bar').style.background = colorbackground;
+            document.querySelector('.search-bar button').style.background = textcolor;
         }
         changeheadbackground();
         changebodybackground();
@@ -1667,11 +1667,13 @@ const HTML_CONTENT = `
             //     input.style.borderColor = isDarkTheme ? '#555' : '#ccc';
             // });
             // logAction('切换主题', { isDarkTheme });
-            
-          colorbackground = generateRandomHex();
-          textcolor = getTextColorBasedOnBackground(colorbackground);
-          headbackground = generateRandomBackgroundImage();
-          bodybackground = generateRandomBackgroundImage();
+            colorbackground = generateRandomHex();
+            textcolor = getTextColorBasedOnBackground(colorbackground);
+            headbackground = generateRandomBackgroundImage();
+            bodybackground = generateRandomBackgroundImage();
+            changeheadbackground();
+            changebodybackground();
+            changecolorbackground();
         }
         // 验证密码
         async function verifyPassword(inputPassword) {

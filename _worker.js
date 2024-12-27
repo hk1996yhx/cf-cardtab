@@ -1147,7 +1147,7 @@ const HTML_CONTENT = `
             } else {
                 // 你可以根据不同条件设置卡片的颜色
                 if (card.dataset.isPrivate === 'true') {
-                    card.style.color = '#800080';  // 私密卡片
+                    card.style.color = '#FF00FF';  // 私密卡片
                 } else {
                     card.style.color = '#ffffff';
                 }

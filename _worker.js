@@ -436,8 +436,7 @@ const HTML_CONTENT = `
             transform: translateY(-5px);
             /* 悬停时向上移动 */
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            /* 增强阴影 */
-            flex-grow: 1;
+            /* 增强阴影 */ 
         }
         .private-tag {
             background-color: #ff9800;

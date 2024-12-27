@@ -1073,8 +1073,12 @@ const HTML_CONTENT = `
             const url = document.createElement('div');
             url.className = 'card-url';
             url.textContent = link.url;
+            const introduction = document.createElement('div');
+            url.className = 'card-introduction';
+            url.textContent = link.introduction;
             card.appendChild(cardTop);
             card.appendChild(url);
+            card.appendChild(introduction);
             if (link.isPrivate) {
                 const privateTag = document.createElement('div');
                 privateTag.className = 'private-tag';
@@ -1108,7 +1112,7 @@ const HTML_CONTENT = `
             if (isAdmin || (link.isPrivate && isLoggedIn) || !link.isPrivate) {
                 container.appendChild(card);
             }
-            // logAction('创建卡片', { name: link.name, isPrivate: link.isPrivate });
+            logAction('创建卡片', { name: link.name, isPrivate: link.isPrivate });
         }
         // 更新卡片样式
         function updateCardStyle(card) {

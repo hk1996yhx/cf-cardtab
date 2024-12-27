@@ -658,7 +658,7 @@ const HTML_CONTENT = `
             const red = Math.floor(Math.random() * 256);
             const green = Math.floor(Math.random() * 256);
             const blue = Math.floor(Math.random() * 256);
-            return 'rgba(' + red + ',' + green + ',' + blue + ',0.6)';
+            return 'rgba(' + red + ',' + green + ',' + blue + ',0.7)';
         }
         var headbackground = generateRandomBackgroundImage();
         var bodybackground = generateRandomBackgroundImage();
@@ -1147,9 +1147,8 @@ const HTML_CONTENT = `
             } else {
                 // 你可以根据不同条件设置卡片的颜色
                 if (card.dataset.isPrivate === 'true') {
-                    card.style.backgroundColor = '#f39c12';  // 私密卡片背景颜色
-                } else {
-                    // card.style.backgroundColor = '#ecf0f1';  // 默认卡片背景颜色
+                    card.style.color = '#800080';  // 私密卡片背景颜色
+                } else { 
                     card.style.backgroundColor = colorbackground; 
                 }
                 card.style.color = '#ffffff';

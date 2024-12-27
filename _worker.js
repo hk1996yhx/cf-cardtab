@@ -660,8 +660,18 @@ const HTML_CONTENT = `
             const blue = Math.floor(Math.random() * 256);
             return 'rgba(' + red + ',' + green + ',' + blue + ',0.7)';
         }
-        function generateRandomtextColor(rgba) { // 提取rgba值
+        function generateRandomtextColor(rgba) {
+            // 确保 rgba 格式有效
+            if (!rgba || typeof rgba !== 'string') {
+                console.error('Invalid rgba format:', rgba);
+                return '#000000';  // 默认返回黑色
+            }
             const values = rgba.match(/\d+/g);
+            // 如果没有匹配到 RGB 值，则返回默认黑色
+            if (!values || values.length < 3) {
+                console.error('Invalid rgba values:', rgba);
+                return '#000000';  // 默认返回黑色
+            }
             const red = parseInt(values[0]);
             const green = parseInt(values[1]);
             const blue = parseInt(values[2]);
@@ -670,10 +680,10 @@ const HTML_CONTENT = `
             // 如果背景颜色亮度较高，则文字颜色用深色，否则用浅色
             return brightness > 128 ? '#000000' : '#ffffff';
         }
+        var colorbackground = generateRandomRGBA();
+        var textcolor = generateRandomtextColor(colorbackground)
         var headbackground = generateRandomBackgroundImage();
         var bodybackground = generateRandomBackgroundImage();
-        var colorbackground = generateRandomRGBA();
-        var textColor = generateRandomtextColor(colorbackground)
         function changeheadbackground() {
             document.querySelector('.searchpage').style.background = headbackground;
         }
@@ -1159,7 +1169,7 @@ const HTML_CONTENT = `
                 // 你可以根据不同条件设置卡片的颜色
                 if (card.dataset.isPrivate === 'true') {
                     // card.style.color = '#FF00FF';  // 私密卡片
-                    card.style.color = textColor;
+                    card.style.color = textcolor;
                 } else {
                     card.style.color = '#ffffff';
                 }

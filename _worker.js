@@ -301,14 +301,14 @@ const HTML_CONTENT = `
             cursor: pointer;
         }
         /* 确定按钮 */
-        #dialog-box button .btn-t {
+        #dialog-box button.btn-t {
             /* 绿色背景 */
             background-color: #4CAF50;
             /* 白色文本 */
             color: white;
         }
         /* 取消按钮 */
-        #dialog-box button .btn-f {
+        #dialog-box button.btn-f {
             /* 红色背景 */
             background-color: #f44336;
             /* 白色文本 */
@@ -319,6 +319,7 @@ const HTML_CONTENT = `
             display: flex;
             align-items: center;
             margin-bottom: 15px;
+            white-space: nowrap;
         }
         /* 私密复选框 */
         #private-checkbox {
@@ -572,8 +573,8 @@ const HTML_CONTENT = `
                         <label for="private-checkbox">VIP观看</label>
                         <input type="checkbox" id="private-checkbox">
                     </div>
-                    <button class="btn-t" onclick="addLink()">√ 确定</button>
-                    <button class="btn-f" onclick="hideAddDialog()">X 取消</button>
+                    <button class="btn-t" onclick="addLink()">确定 √</button>
+                    <button class="btn-f" onclick="hideAddDialog()">取消 X</button>
                 </div>
             </div>
             <!-- 主题切换按钮 -->

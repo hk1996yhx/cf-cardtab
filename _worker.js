@@ -660,9 +660,20 @@ const HTML_CONTENT = `
             const blue = Math.floor(Math.random() * 256);
             return 'rgba(' + red + ',' + green + ',' + blue + ',0.7)';
         }
+        function generateRandomtextColor(rgba) { // 提取rgba值
+            const values = rgba.match(/\d+/g);
+            const red = parseInt(values[0]);
+            const green = parseInt(values[1]);
+            const blue = parseInt(values[2]);
+            // 计算相对亮度（perceived brightness）
+            const brightness = (red * 299 + green * 587 + blue * 114) / 1000;
+            // 如果背景颜色亮度较高，则文字颜色用深色，否则用浅色
+            return brightness > 128 ? 'rgba(0, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.8)';
+        }
         var headbackground = generateRandomBackgroundImage();
         var bodybackground = generateRandomBackgroundImage();
         var colorbackground = generateRandomRGBA();
+        var textColor = generateRandomtextColor(colorbackground)
         function changeheadbackground() {
             document.querySelector('.searchpage').style.background = headbackground;
         }
@@ -1147,7 +1158,8 @@ const HTML_CONTENT = `
             } else {
                 // 你可以根据不同条件设置卡片的颜色
                 if (card.dataset.isPrivate === 'true') {
-                    card.style.color = '#FF00FF';  // 私密卡片
+                    // card.style.color = '#FF00FF';  // 私密卡片
+                    card.style.color = textColor;
                 } else {
                     card.style.color = '#ffffff';
                 }

@@ -401,35 +401,27 @@ const HTML_CONTENT = `
         }
         .card:hover {
             transform: translateY(-5px);
-            /* 悬停时向上移动 */
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            /* 增强阴影 */
             height: auto;
-            /* 悬停时高度自动 */
         }
         .card-top {
             display: flex;
             align-items: center;
             margin-bottom: 10px;
-            /* 更大的间距 */
         }
         .card-icon {
             width: 24px;
-            /* 更大的图标 */
             height: 24px;
             margin-right: 10px;
-            /* 更多的间距 */
         }
         .card-title {
             font-size: 16px;
-            /* 更大的字体 */
             font-weight: bold;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
         .card-url {
-            /* display: none; */
             font-size: 10px;
             color: #666;
             white-space: nowrap;
@@ -438,24 +430,16 @@ const HTML_CONTENT = `
         }
         .card-introduction {
             font-size: 14px;
-            /* 更大的字体 */
             color: #666;
             max-height: 50%;
-            /* white-space: nowrap; */
             overflow: hidden;
             text-overflow: ellipsis;
             transition: max-height 0.2s ease-out;
         }
         .card:hover .card-introduction {
-            /* 悬停时显示完整介绍 */
             white-space: normal;
-            /* 允许文字换行 */
             overflow: visible;
-            /* 允许溢出内容可见 */
             max-height: 100%;
-            /* 悬停时显示全部内容 */
-            overflow: auto;
-            /* 允许滚动查看超出内容 */
         }
         .private-tag {
             background-color: #ff9800;

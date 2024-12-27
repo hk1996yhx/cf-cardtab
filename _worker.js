@@ -384,10 +384,9 @@ const HTML_CONTENT = `
             /* 圆润的边角 */
             padding: 15px;
             /* 更多的填充 */
-            width: 100%;
-            /* 默认宽度为100% */
-            max-width: 150px;
-            /* 最大宽度为150px */
+            width: 150px;
+            /* 固定宽度 */
+            height: 100px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             /* 添加细微阴影 */
             cursor: pointer;
@@ -395,7 +394,7 @@ const HTML_CONTENT = `
             /* 平滑过渡 */
             position: relative;
             user-select: none;
-            flex-grow: 1;
+            flex-grow: 0;
             /* 允许卡片在容器内扩展 */
             box-sizing: border-box;
             /* 确保填充不影响宽度 */

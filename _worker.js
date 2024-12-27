@@ -1183,7 +1183,7 @@ const HTML_CONTENT = `
             const introduction = document.getElementById('introduction-input').value;
             const isPrivate = document.getElementById('private-checkbox').checked;
             if (name && url && category) {
-                const newLink = { name, url, category, isPrivate };
+                const newLink = { name, url, category, isPrivate, introduction };
                 if (isPrivate) {
                     privateLinks.push(newLink);
                 } else {

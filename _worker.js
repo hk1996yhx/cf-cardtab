@@ -701,10 +701,15 @@ const HTML_CONTENT = `
         }
         function changecolorbackground() {
             document.querySelector('#hitokoto').style.background = colorbackground;
+            document.querySelector('#hitokoto').style.color = textcolor;
             document.querySelector('.center-content h3').style.background = colorbackground;
+            document.querySelector('.center-content h3').style.color = textcolor;
             document.querySelector('.search-bar').style.background = colorbackground;
+            document.querySelector('.search-bar').style.color = textcolor;
             document.querySelector('.search-bar button').style.background = colorbackground;
+            document.querySelector('.search-bar button').style.color = textcolor;
             document.querySelector('.search-engine').style.background = colorbackground;
+            document.querySelector('.search-engine').style.color = textcolor;
         }
         changeheadbackground();
         changebodybackground();

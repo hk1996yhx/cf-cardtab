@@ -681,7 +681,7 @@ const HTML_CONTENT = `
             return brightness > 128 ? '#000000' : '#ffffff';
         }
         var colorbackground = generateRandomRGBA();
-        var textcolor = generateRandomtextColor(colorbackground)
+        var textcolor = generateRandomtextColor(colorbackground);
         var headbackground = generateRandomBackgroundImage();
         var bodybackground = generateRandomBackgroundImage();
         function changeheadbackground() {

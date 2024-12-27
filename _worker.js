@@ -663,8 +663,8 @@ const HTML_CONTENT = `
                 green.toString(16).padStart(2, '0') +
                 blue.toString(16).padStart(2, '0');
         }
-        // 计算互补色
-        function getComplementaryColor(hex) {
+        // 计算亮一点的互补色
+        function getBrightComplementaryColor(hex) {
             // 确保传入的是有效的16进制颜色
             if (!/^#[0-9A-F]{6}$/i.test(hex)) {
                 console.error('Invalid hex color:', hex);
@@ -674,10 +674,14 @@ const HTML_CONTENT = `
             const red = parseInt(hex.slice(1, 3), 16);   // 获取红色通道
             const green = parseInt(hex.slice(3, 5), 16); // 获取绿色通道
             const blue = parseInt(hex.slice(5, 7), 16);  // 获取蓝色通道
-            // 计算互补色（反转每个通道的颜色）
-            const compRed = 255 - red;
-            const compGreen = 255 - green;
-            const compBlue = 255 - blue;
+            // 计算互补色（反转每个通道的颜色），然后提升亮度
+            let compRed = 255 - red;
+            let compGreen = 255 - green;
+            let compBlue = 255 - blue;
+            // 提升亮度：增加一定的亮度值，确保每个通道值在0到255之间
+            compRed = Math.min(compRed + 50, 255);
+            compGreen = Math.min(compGreen + 50, 255);
+            compBlue = Math.min(compBlue + 50, 255);
             // 返回互补色的16进制格式
             const compHex = '#' +
                 compRed.toString(16).padStart(2, '0') +

@@ -368,6 +368,7 @@ const HTML_CONTENT = `
         .edit-category-btn:hover {
             background-color: #388e3c;
         }
+        /* 卡片样式 */
         .card-container {
             display: flex;
             flex-wrap: wrap;
@@ -409,6 +410,14 @@ const HTML_CONTENT = `
             text-overflow: ellipsis;
         }
         .card-url {
+            display: none;
+            font-size: 12px;
+            color: #666;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .card-introduction {
             font-size: 12px;
             color: #666;
             white-space: nowrap;

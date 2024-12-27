@@ -668,7 +668,7 @@ const HTML_CONTENT = `
             // 计算相对亮度（perceived brightness）
             const brightness = (red * 299 + green * 587 + blue * 114) / 1000;
             // 如果背景颜色亮度较高，则文字颜色用深色，否则用浅色
-            return brightness > 128 ? 'rgba(0, 0, 0, 0.8)' : 'rgba(255, 255, 255, 0.8)';
+            return brightness > 128 ? '#000000' : '#ffffff';
         }
         var headbackground = generateRandomBackgroundImage();
         var bodybackground = generateRandomBackgroundImage();

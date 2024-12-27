@@ -399,12 +399,6 @@ const HTML_CONTENT = `
             box-sizing: border-box;
             /* 确保填充不影响宽度 */
         }
-        .card:hover {
-            transform: translateY(-5px);
-            /* 悬停时向上移动 */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            /* 增强阴影 */
-        }
         .card-top {
             display: flex;
             align-items: center;
@@ -426,17 +420,24 @@ const HTML_CONTENT = `
             overflow: hidden;
             text-overflow: ellipsis;
         }
+        /* .card-url {
+            display: none;
+        } */
         .card-url,
         .card-introduction {
             font-size: 14px;
             /* 更大的字体 */
             color: #666;
-            white-space: nowrap;
+            /* white-space: nowrap; */
             overflow: hidden;
             text-overflow: ellipsis;
         }
-        .card-url {
-            display: none;
+        .card:hover {
+            transform: translateY(-5px);
+            /* 悬停时向上移动 */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            /* 增强阴影 */
+            flex-grow: 1;
         }
         .private-tag {
             background-color: #ff9800;

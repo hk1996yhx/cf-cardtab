@@ -675,6 +675,7 @@ const HTML_CONTENT = `
             document.querySelector('.search-bar').style.background = colorbackground;
             document.querySelector('.search-bar button').style.background = colorbackground;
             document.querySelector('.search-engine').style.background = colorbackground;
+            document.querySelector('.card').style.background = colorbackground;
         }
         changeheadbackground();
         changebodybackground();

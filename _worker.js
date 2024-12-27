@@ -375,54 +375,69 @@ const HTML_CONTENT = `
             gap: 10px;
             justify-content: flex-start;
             /* 让卡片从左到右排列 */
-        }
-        .card {
-            border-radius: 5px;
             padding: 10px;
-            width: 150px;
+            /* 添加一些内边距以适应不同屏幕 */
+        }
+        /* 单张卡片样式 */
+        .card {
+            border-radius: 10px;
+            /* 圆润的边角 */
+            padding: 15px;
+            /* 更多的填充 */
+            width: 100%;
+            /* 默认宽度为100% */
+            max-width: 150px;
+            /* 最大宽度为150px */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* 添加细微阴影 */
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: transform 0.2s, box-shadow 0.2s;
+            /* 平滑过渡 */
             position: relative;
             user-select: none;
-            flex-basis: 150px;
-            /* 保持卡片宽度 */
-            flex-grow: 0;
-            /* 防止卡片撑大 */
+            flex-grow: 1;
+            /* 允许卡片在容器内扩展 */
+            box-sizing: border-box;
+            /* 确保填充不影响宽度 */
         }
         .card:hover {
             transform: translateY(-5px);
+            /* 悬停时向上移动 */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            /* 增强阴影 */
         }
         .card-top {
             display: flex;
             align-items: center;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
+            /* 更大的间距 */
         }
         .card-icon {
-            width: 16px;
-            height: 16px;
-            margin-right: 5px;
+            width: 24px;
+            /* 更大的图标 */
+            height: 24px;
+            margin-right: 10px;
+            /* 更多的间距 */
         }
         .card-title {
-            font-size: 14px;
+            font-size: 16px;
+            /* 更大的字体 */
             font-weight: bold;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .card-url,
+        .card-introduction {
+            font-size: 14px;
+            /* 更大的字体 */
+            color: #666;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
         .card-url {
             display: none;
-            font-size: 12px;
-            color: #666;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        .card-introduction {
-            font-size: 12px;
-            color: #666;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
         }
         .private-tag {
             background-color: #ff9800;
@@ -495,7 +510,7 @@ const HTML_CONTENT = `
             }
             .card {
                 width: 80%;
-                max-width: 100%;
+                max-width: none;
                 padding: 5px;
             }
             .card-title {

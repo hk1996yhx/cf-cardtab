@@ -1074,8 +1074,8 @@ const HTML_CONTENT = `
             url.className = 'card-url';
             url.textContent = link.url;
             const introduction = document.createElement('div');
-            url.className = 'card-introduction';
-            url.textContent = link.introduction;
+            introduction.className = 'card-introduction';
+            introduction.textContent = link.introduction;
             card.appendChild(cardTop);
             card.appendChild(url);
             card.appendChild(introduction);

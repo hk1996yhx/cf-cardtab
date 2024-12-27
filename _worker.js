@@ -440,6 +440,7 @@ const HTML_CONTENT = `
             font-size: 14px;
             /* 更大的字体 */
             color: #666;
+            max-height: 50%;
             /* white-space: nowrap; */
             overflow: hidden;
             text-overflow: ellipsis;

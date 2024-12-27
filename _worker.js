@@ -653,26 +653,18 @@ const HTML_CONTENT = `
             // Choose a random image URL from the array
             return backgrounds[Math.floor(Math.random() * backgrounds.length)];
         }
-        function generateRandomRGBA() {
-            // 对每个颜色通道分别生成随机数
-            const red = Math.floor(Math.random() * 256);
-            const green = Math.floor(Math.random() * 256);
-            const blue = Math.floor(Math.random() * 256);
-            return 'rgba(' + red + ',' + green + ',' + blue + ',0.7)';
-        }
+        // 生成随机的16进制颜色
         function generateRandomHex() {
-            // 对每个颜色通道分别生成随机数
             const red = Math.floor(Math.random() * 256);
             const green = Math.floor(Math.random() * 256);
             const blue = Math.floor(Math.random() * 256);
-            // 将红、绿、蓝的值转换为16进制并拼接成完整的颜色
-            const hexColor = '#' +
-                red.toString(16).padStart(2, '0') +  // 转换为16进制并补齐为2位
+            return '#' +
+                red.toString(16).padStart(2, '0') +
                 green.toString(16).padStart(2, '0') +
                 blue.toString(16).padStart(2, '0');
-            return hexColor;
         }
-        function generateRandomtextColor(hex) {
+        // 计算互补色
+        function getComplementaryColor(hex) {
             // 确保传入的是有效的16进制颜色
             if (!/^#[0-9A-F]{6}$/i.test(hex)) {
                 console.error('Invalid hex color:', hex);
@@ -682,13 +674,19 @@ const HTML_CONTENT = `
             const red = parseInt(hex.slice(1, 3), 16);   // 获取红色通道
             const green = parseInt(hex.slice(3, 5), 16); // 获取绿色通道
             const blue = parseInt(hex.slice(5, 7), 16);  // 获取蓝色通道
-            // 计算相对亮度（perceived brightness）
-            const brightness = (red * 299 + green * 587 + blue * 114) / 1000;
-            // 根据亮度判断文字颜色（亮色背景用黑色文字，暗色背景用白色文字）
-            return brightness > 128 ? '#000000' : '#ffffff';
+            // 计算互补色（反转每个通道的颜色）
+            const compRed = 255 - red;
+            const compGreen = 255 - green;
+            const compBlue = 255 - blue;
+            // 返回互补色的16进制格式
+            const compHex = '#' +
+                compRed.toString(16).padStart(2, '0') +
+                compGreen.toString(16).padStart(2, '0') +
+                compBlue.toString(16).padStart(2, '0');
+            return compHex;
         }
         var colorbackground = generateRandomHex();
-        var textcolor = generateRandomtextColor(colorbackground);
+        var textcolor = getComplementaryColor(colorbackground);
         var headbackground = generateRandomBackgroundImage();
         var bodybackground = generateRandomBackgroundImage();
         function changeheadbackground() {

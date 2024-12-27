@@ -1641,32 +1641,37 @@ const HTML_CONTENT = `
         }
         // 切换主题
         function toggleTheme() {
-            isDarkTheme = !isDarkTheme;
-            document.body.style.backgroundColor = isDarkTheme ? '#121212' : '#e8f4ea';
-            document.body.style.color = isDarkTheme ? '#ffffff' : '#333';
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                card.style.backgroundColor = isDarkTheme ? '#1e1e1e' : '#b8c9d9';
-                card.style.color = isDarkTheme ? '#ffffff' : '#333';
-                card.style.boxShadow = isDarkTheme
-                    ? '0 4px 8px rgba(0, 0, 0, 0.5)'
-                    : '0 4px 8px rgba(0, 0, 0, 0.1)';
-            });
-            const searchpage = document.querySelectorAll('.searchpage');
-            searchpage.forEach(element => {
-                element.style.backgroundColor = isDarkTheme ? '#121212' : '#e8f4ea';
-                element.style.color = isDarkTheme ? '#ffffff' : '#333';
-            });
-            const dialogBox = document.getElementById('dialog-box');
-            dialogBox.style.backgroundColor = isDarkTheme ? '#1e1e1e' : '#ffffff';
-            dialogBox.style.color = isDarkTheme ? '#ffffff' : '#333';
-            const inputs = document.querySelectorAll('input[type="text"], input[type="password"], select');
-            inputs.forEach(input => {
-                input.style.backgroundColor = isDarkTheme ? '#444' : '#fff';
-                input.style.color = isDarkTheme ? '#fff' : '#333';
-                input.style.borderColor = isDarkTheme ? '#555' : '#ccc';
-            });
-            logAction('切换主题', { isDarkTheme });
+            // isDarkTheme = !isDarkTheme;
+            // document.body.style.backgroundColor = isDarkTheme ? '#121212' : '#e8f4ea';
+            // document.body.style.color = isDarkTheme ? '#ffffff' : '#333';
+            // const cards = document.querySelectorAll('.card');
+            // cards.forEach(card => {
+            //     card.style.backgroundColor = isDarkTheme ? '#1e1e1e' : '#b8c9d9';
+            //     card.style.color = isDarkTheme ? '#ffffff' : '#333';
+            //     card.style.boxShadow = isDarkTheme
+            //         ? '0 4px 8px rgba(0, 0, 0, 0.5)'
+            //         : '0 4px 8px rgba(0, 0, 0, 0.1)';
+            // });
+            // const searchpage = document.querySelectorAll('.searchpage');
+            // searchpage.forEach(element => {
+            //     element.style.backgroundColor = isDarkTheme ? '#121212' : '#e8f4ea';
+            //     element.style.color = isDarkTheme ? '#ffffff' : '#333';
+            // });
+            // const dialogBox = document.getElementById('dialog-box');
+            // dialogBox.style.backgroundColor = isDarkTheme ? '#1e1e1e' : '#ffffff';
+            // dialogBox.style.color = isDarkTheme ? '#ffffff' : '#333';
+            // const inputs = document.querySelectorAll('input[type="text"], input[type="password"], select');
+            // inputs.forEach(input => {
+            //     input.style.backgroundColor = isDarkTheme ? '#444' : '#fff';
+            //     input.style.color = isDarkTheme ? '#fff' : '#333';
+            //     input.style.borderColor = isDarkTheme ? '#555' : '#ccc';
+            // });
+            // logAction('切换主题', { isDarkTheme });
+            
+          colorbackground = generateRandomHex();
+          textcolor = getTextColorBasedOnBackground(colorbackground);
+          headbackground = generateRandomBackgroundImage();
+          bodybackground = generateRandomBackgroundImage();
         }
         // 验证密码
         async function verifyPassword(inputPassword) {

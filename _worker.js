@@ -672,14 +672,19 @@ const HTML_CONTENT = `
                 blue.toString(16).padStart(2, '0');
             return hexColor;
         }
-        function generateRandomtextColor(rgba) { // 提取rgba值
-            const values = rgba.match(/\d+/g);
-            const red = parseInt(values[0]);
-            const green = parseInt(values[1]);
-            const blue = parseInt(values[2]);
+        function generateRandomtextColor(hex) {
+            // 确保传入的是有效的16进制颜色
+            if (!/^#[0-9A-F]{6}$/i.test(hex)) {
+                console.error('Invalid hex color:', hex);
+                return '#000000';  // 默认返回黑色
+            }
+            // 解析16进制颜色
+            const red = parseInt(hex.slice(1, 3), 16);   // 获取红色通道
+            const green = parseInt(hex.slice(3, 5), 16); // 获取绿色通道
+            const blue = parseInt(hex.slice(5, 7), 16);  // 获取蓝色通道
             // 计算相对亮度（perceived brightness）
             const brightness = (red * 299 + green * 587 + blue * 114) / 1000;
-            // 如果背景颜色亮度较高，则文字颜色用深色，否则用浅色
+            // 根据亮度判断文字颜色（亮色背景用黑色文字，暗色背景用白色文字）
             return brightness > 128 ? '#000000' : '#ffffff';
         }
         var colorbackground = generateRandomHex();

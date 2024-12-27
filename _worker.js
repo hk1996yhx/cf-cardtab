@@ -400,7 +400,7 @@ const HTML_CONTENT = `
             /* 确保填充不影响宽度 */
         }
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             height: auto;
         }
@@ -423,18 +423,16 @@ const HTML_CONTENT = `
         }
         .card-url {
             font-size: 10px;
-            color: #666;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
         .card-introduction {
-            font-size: 14px;
-            color: #666;
+            font-size: 13px;
             max-height: 50%;
             overflow: hidden;
             text-overflow: ellipsis;
-            transition: max-height 0.2s ease-out;
+            transition: max-height 0.4s ease-out;
         }
         .card:hover .card-introduction {
             white-space: normal;

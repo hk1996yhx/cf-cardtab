@@ -660,6 +660,18 @@ const HTML_CONTENT = `
             const blue = Math.floor(Math.random() * 256);
             return 'rgba(' + red + ',' + green + ',' + blue + ',0.7)';
         }
+        function generateRandomHex() {
+            // 对每个颜色通道分别生成随机数
+            const red = Math.floor(Math.random() * 256);
+            const green = Math.floor(Math.random() * 256);
+            const blue = Math.floor(Math.random() * 256);
+            // 将红、绿、蓝的值转换为16进制并拼接成完整的颜色
+            const hexColor = '#' +
+                red.toString(16).padStart(2, '0') +  // 转换为16进制并补齐为2位
+                green.toString(16).padStart(2, '0') +
+                blue.toString(16).padStart(2, '0');
+            return hexColor;
+        }
         function generateRandomtextColor(rgba) { // 提取rgba值
             const values = rgba.match(/\d+/g);
             const red = parseInt(values[0]);
@@ -670,7 +682,7 @@ const HTML_CONTENT = `
             // 如果背景颜色亮度较高，则文字颜色用深色，否则用浅色
             return brightness > 128 ? '#000000' : '#ffffff';
         }
-        var colorbackground = generateRandomRGBA();
+        var colorbackground = generateRandomHex();
         var textcolor = generateRandomtextColor(colorbackground);
         var headbackground = generateRandomBackgroundImage();
         var bodybackground = generateRandomBackgroundImage();

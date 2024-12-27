@@ -663,34 +663,31 @@ const HTML_CONTENT = `
                 green.toString(16).padStart(2, '0') +
                 blue.toString(16).padStart(2, '0');
         }
-        // 计算亮一点的互补色
-        function getBrightComplementaryColor(hex) {
-            // 确保传入的是有效的16进制颜色
-            if (!/^#[0-9A-F]{6}$/i.test(hex)) {
-                console.error('Invalid hex color:', hex);
-                return '#000000';  // 默认返回黑色
-            }
+        // 计算亮度并根据亮度选择文字颜色
+        function getTextColorBasedOnBackground(hex) {
             // 解析16进制颜色
-            const red = parseInt(hex.slice(1, 3), 16);   // 获取红色通道
-            const green = parseInt(hex.slice(3, 5), 16); // 获取绿色通道
-            const blue = parseInt(hex.slice(5, 7), 16);  // 获取蓝色通道
-            // 计算互补色（反转每个通道的颜色），然后提升亮度
-            let compRed = 255 - red;
-            let compGreen = 255 - green;
-            let compBlue = 255 - blue;
-            // 提升亮度：增加一定的亮度值，确保每个通道值在0到255之间
-            compRed = Math.min(compRed + 50, 255);
-            compGreen = Math.min(compGreen + 50, 255);
-            compBlue = Math.min(compBlue + 50, 255);
-            // 返回互补色的16进制格式
-            const compHex = '#' +
-                compRed.toString(16).padStart(2, '0') +
-                compGreen.toString(16).padStart(2, '0') +
-                compBlue.toString(16).padStart(2, '0');
-            return compHex;
+            const red = parseInt(hex.slice(1, 3), 16);
+            const green = parseInt(hex.slice(3, 5), 16);
+            const blue = parseInt(hex.slice(5, 7), 16);
+            // 计算相对亮度（perceived brightness）
+            const brightness = (red * 299 + green * 587 + blue * 114) / 1000;
+            // 如果背景色是深色，返回白色文字；如果是亮色，返回互补色文字
+            if (brightness < 128) {
+                return '#ffffff'; // 白色文字
+            } else {
+                // 计算互补色（反转每个通道的颜色）
+                let compRed = 255 - red;
+                let compGreen = 255 - green;
+                let compBlue = 255 - blue;
+                // 返回互补色的16进制格式
+                return '#' +
+                    compRed.toString(16).padStart(2, '0') +
+                    compGreen.toString(16).padStart(2, '0') +
+                    compBlue.toString(16).padStart(2, '0');
+            }
         }
         var colorbackground = generateRandomHex();
-        var textcolor = getBrightComplementaryColor(colorbackground);
+        var textcolor = getTextColorBasedOnBackground(colorbackground);
         var headbackground = generateRandomBackgroundImage();
         var bodybackground = generateRandomBackgroundImage();
         function changeheadbackground() {
@@ -1183,10 +1180,10 @@ const HTML_CONTENT = `
                 // 你可以根据不同条件设置卡片的颜色
                 if (card.dataset.isPrivate === 'true') {
                     // card.style.color = '#FF00FF';  // 私密卡片
-                    card.style.color = textcolor;
                 } else {
-                    card.style.color = '#ffffff';
+                    // card.style.color = '#ffffff';
                 }
+                card.style.color = textcolor;
                 card.style.backgroundColor = colorbackground;
                 card.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
             }

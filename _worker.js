@@ -260,7 +260,6 @@ const HTML_CONTENT = `
             /* 稍微深一点的覆盖层 */
             background-color: rgba(0, 0, 0, 0.7);
             /* 使用弹性盒子居中 */
-            /* display: flex; */
             justify-content: center;
             align-items: center;
         }
@@ -302,14 +301,14 @@ const HTML_CONTENT = `
             cursor: pointer;
         }
         /* 确定按钮 */
-        #dialog-box button:nth-child(1) {
+        #dialog-box button .btn-t {
             /* 绿色背景 */
             background-color: #4CAF50;
             /* 白色文本 */
             color: white;
         }
         /* 取消按钮 */
-        #dialog-box button:nth-child(2) {
+        #dialog-box button .btn-f {
             /* 红色背景 */
             background-color: #f44336;
             /* 白色文本 */
@@ -567,14 +566,14 @@ const HTML_CONTENT = `
                     <input type="text" id="name-input">
                     <label for="url-input">网站地址</label>
                     <input type="text" id="url-input">
-                    <label for="Introduction-input">网站简介</label>
-                    <input type="text" id="Introduction-input">
+                    <label for="introduction-input">网站简介</label>
+                    <input type="text" id="introduction-input">
                     <div class="private-link-container">
-                        <label for="private-checkbox">私密链接</label>
+                        <label for="private-checkbox">VIP观看</label>
                         <input type="checkbox" id="private-checkbox">
                     </div>
-                    <button onclick="addLink()">确定</button>
-                    <button onclick="hideAddDialog()">取消</button>
+                    <button class="btn-t" onclick="addLink()">√ 确定</button>
+                    <button class="btn-f" onclick="hideAddDialog()">X 取消</button>
                 </div>
             </div>
             <!-- 主题切换按钮 -->
@@ -1173,9 +1172,10 @@ const HTML_CONTENT = `
             if (!await validateToken()) {
                 return;
             }
+            const category = document.getElementById('category-select').value;
             const name = document.getElementById('name-input').value;
             const url = document.getElementById('url-input').value;
-            const category = document.getElementById('category-select').value;
+            const introduction = document.getElementById('introduction-input').value;
             const isPrivate = document.getElementById('private-checkbox').checked;
             if (name && url && category) {
                 const newLink = { name, url, category, isPrivate };

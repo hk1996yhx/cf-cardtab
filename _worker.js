@@ -674,7 +674,7 @@ const HTML_CONTENT = `
             document.querySelector('.center-content h3').style.background = colorbackground;
             document.querySelector('.search-bar').style.background = colorbackground;
             document.querySelector('.search-bar button').style.background = colorbackground;
-            document.querySelector('.search-engine').style.background = colorbackground; 
+            document.querySelector('.search-engine').style.background = colorbackground;
         }
         changeheadbackground();
         changebodybackground();
@@ -1147,15 +1147,15 @@ const HTML_CONTENT = `
             } else {
                 // 你可以根据不同条件设置卡片的颜色
                 if (card.dataset.isPrivate === 'true') {
-                    card.style.color = '#800080';  // 私密卡片背景颜色
-                } else { 
-                    card.style.backgroundColor = colorbackground; 
+                    card.style.color = '#800080';  // 私密卡片
+                } else {
+                    card.style.color = '#ffffff';
                 }
-                card.style.color = '#ffffff';
+                card.style.backgroundColor = colorbackground;
                 card.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
             }
             // 你还可以设置其他样式
-            card.style.border = '1px solid #ccc'; // 边框颜色 
+            card.style.border = '1px solid #ccc'; // 边框颜色
         }
         // 更新分类选择下拉框
         function updateCategorySelect() {

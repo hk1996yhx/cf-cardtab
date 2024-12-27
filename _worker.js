@@ -701,12 +701,8 @@ const HTML_CONTENT = `
             document.querySelector('#hitokoto').style.color = textcolor;
             document.querySelector('.center-content h3').style.background = colorbackground;
             document.querySelector('.center-content h3').style.color = textcolor;
-            document.querySelector('.search-bar').style.background = colorbackground;
-            document.querySelector('.search-bar').style.color = textcolor;
-            document.querySelector('.search-bar button').style.background = colorbackground;
-            document.querySelector('.search-bar button').style.color = textcolor;
-            document.querySelector('.search-engine').style.background = colorbackground;
-            document.querySelector('.search-engine').style.color = textcolor;
+            document.querySelector('.search-bar').style.background = colorbackground; 
+            document.querySelector('.search-bar button').style.background = textcolor; 
         }
         changeheadbackground();
         changebodybackground();
@@ -778,6 +774,7 @@ const HTML_CONTENT = `
                     // 设置未选中的样式
                     btn.style.backgroundColor = colorbackground; // 未选中时的背景颜色
                 }
+                btn.style.color = textcolor;
             });
             logAction('设置搜索引擎', { engine });
         }

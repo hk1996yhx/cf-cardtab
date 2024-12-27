@@ -260,7 +260,7 @@ const HTML_CONTENT = `
             /* 稍微深一点的覆盖层 */
             background-color: rgba(0, 0, 0, 0.7);
             /* 使用弹性盒子居中 */
-            display: flex;
+            /* display: flex; */
             justify-content: center;
             align-items: center;
         }
@@ -558,17 +558,17 @@ const HTML_CONTENT = `
             <!-- 类别目录 -->
             <!-- 分类和卡片容器 -->
             <div id="sections-container"></div>
-            <!-- 主题切换按钮 -->
-            <button id="theme-toggle" onclick="toggleTheme()">◑</button>
             <!-- 添加链接对话框 -->
             <div id="dialog-overlay">
                 <div id="dialog-box">
-                    <label for="name-input">名称</label>
-                    <input type="text" id="name-input">
-                    <label for="url-input">地址</label>
-                    <input type="text" id="url-input">
-                    <label for="category-select">选择分类</label>
+                    <label for="category-select">网站类型</label>
                     <select id="category-select"></select>
+                    <label for="name-input">网站名字</label>
+                    <input type="text" id="name-input">
+                    <label for="url-input">网站地址</label>
+                    <input type="text" id="url-input">
+                    <label for="Introduction-input">网站简介</label>
+                    <input type="text" id="Introduction-input">
                     <div class="private-link-container">
                         <label for="private-checkbox">私密链接</label>
                         <input type="checkbox" id="private-checkbox">
@@ -577,6 +577,8 @@ const HTML_CONTENT = `
                     <button onclick="hideAddDialog()">取消</button>
                 </div>
             </div>
+            <!-- 主题切换按钮 -->
+            <button id="theme-toggle" onclick="toggleTheme()">◑</button>
             <!-- 添加/删除控制按钮 -->
             <div class="add-remove-controls">
                 <button class="round-btn add-btn" onclick="showAddDialog()">+</button>

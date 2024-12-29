@@ -230,6 +230,7 @@ const HTML_CONTENT = `
         }
         /* 主题切换按钮样式 */
         #theme-toggle {
+            z-index: 9999;
             position: fixed;
             bottom: 50px;
             right: 20px;

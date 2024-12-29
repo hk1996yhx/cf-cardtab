@@ -6,9 +6,10 @@ const HTML_CONTENT = `
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- 标签页标题 -->
     <title>星际导航站</title>
-    <!-- 标签页图标 -->
+    <!-- 标签页图标
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2280%22>⭐</text></svg>">
+         -->
     <!-- 预加载常用的搜索引擎图标 -->
     <link rel="preload" href="https://getfavicon.377020945.xyz/?url=https://www.baidu.com/s?wd=" as="image">
     <link rel="preload" href="https://getfavicon.377020945.xyz/?url=https://www.bing.com/search?q=" as="image">

@@ -1,7 +1,6 @@
 const HTML_CONTENT = `
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +27,6 @@ const HTML_CONTENT = `
             background-color: #e8f4ea;
             transition: background-color 0.3s ease;
         }
-
         /* 搜索页样式 */
         .searchpage {
             position: absolute;
@@ -40,14 +38,12 @@ const HTML_CONTENT = `
             z-index: 999;
             transition: height 0.8s ease-in-out, opacity 2s ease;
         }
-
         /* 当搜索页收起时的状态 */
         .searchpage.hide {
             height: 0vh;
             opacity: 0;
             z-index: -1;
         }
-
         #fanye-button {
             position: absolute;
             top: 105%;
@@ -61,7 +57,6 @@ const HTML_CONTENT = `
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.1s ease;
         }
-
         /* 中心内容样式 */
         .center-content {
             position: absolute;
@@ -72,18 +67,15 @@ const HTML_CONTENT = `
             max-width: 600px;
             text-align: center;
         }
-
         .center-content h3 {
             color: white;
             padding: 10px;
             display: inline-block;
         }
-
         /* 搜索栏样式 */
         .search-container {
             margin-top: 10px;
         }
-
         .search-bar {
             display: flex;
             justify-content: center;
@@ -97,7 +89,6 @@ const HTML_CONTENT = `
             backdrop-filter: blur(8px);
             /* 背景模糊效果，增添气泡感 */
         }
-
         .search-bar input {
             width: 70%;
             padding: 12px 16px;
@@ -109,12 +100,10 @@ const HTML_CONTENT = `
             /* 输入框半透明背景 */
             transition: all 0.3s ease;
         }
-
         .search-bar input:focus {
             border-color: #4CAF50;
             box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
         }
-
         .search-bar button {
             padding: 12px 18px;
             font-size: 16px;
@@ -126,20 +115,17 @@ const HTML_CONTENT = `
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.1s ease;
         }
-
         .search-bar button:hover {
             background-color: rgba(76, 175, 80, 1);
             /* 悬停时变为不透明 */
             transform: translateY(-2px);
             /* 提升按钮的悬浮效果 */
         }
-
         .search-bar button:active {
             background-color: rgba(56, 142, 60, 0.8);
             transform: translateY(2px);
             /* 按钮点击时向下沉降的效果 */
         }
-
         /* 搜索引擎按钮样式 */
         .search-engines {
             display: flex;
@@ -147,7 +133,6 @@ const HTML_CONTENT = `
             gap: 15px;
             margin-top: 20px;
         }
-
         .search-engine {
             padding: 10px 20px;
             font-size: 16px;
@@ -158,14 +143,12 @@ const HTML_CONTENT = `
             transition: all 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-
         .search-engine:hover {
             background-color: #4CAF50;
             color: white;
             border-color: #4CAF50;
             transform: translateY(-3px);
         }
-
         /* hitokoto样式 */
         #hitokoto {
             /* 使用 fixed 使元素固定在浏览器窗口 */
@@ -181,7 +164,6 @@ const HTML_CONTENT = `
             white-space: nowrap;
             display: inline-block;
         }
-
         /* 管理员控制面板样式 */
         .admin-controls {
             /*置顶*/
@@ -191,7 +173,6 @@ const HTML_CONTENT = `
             right: 10px;
             font-size: 60%;
         }
-
         /* 标签页样式 */
         .content {
             position: absolute;
@@ -204,13 +185,11 @@ const HTML_CONTENT = `
             padding-top: 100px;
             padding-bottom: 100px;
         }
-
         /* 标签页展开样式 */
         .content.show {
             height: 100vh;
             opacity: 1;
         }
-
         /* 添加/删除控制样式 */
         .add-remove-controls {
             display: none;
@@ -222,7 +201,6 @@ const HTML_CONTENT = `
             align-items: center;
             gap: 10px;
         }
-
         /* 按钮样式 */
         .round-btn {
             background-color: #007bff;
@@ -237,24 +215,19 @@ const HTML_CONTENT = `
             cursor: pointer;
             margin: 5px 0;
         }
-
         /* 按钮顺序 */
         .add-btn {
             order: 1;
         }
-
         .remove-btn {
             order: 2;
         }
-
         .category-btn {
             order: 3;
         }
-
         .remove-category-btn {
             order: 4;
         }
-
         /* 主题切换按钮样式 */
         #theme-toggle {
             z-index: 9999;
@@ -274,11 +247,9 @@ const HTML_CONTENT = `
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             transition: background-color 0.3s ease;
         }
-
         #theme-toggle:hover {
             background-color: #007bff;
         }
-
         /* 对话框覆盖层样式 */
         #dialog-overlay {
             display: none;
@@ -293,7 +264,6 @@ const HTML_CONTENT = `
             justify-content: center;
             align-items: center;
         }
-
         /* 对话框样式 */
         #dialog-box {
             /* 柔和的白色 */
@@ -307,7 +277,6 @@ const HTML_CONTENT = `
             /* 稍宽一些 */
             width: 320px;
         }
-
         /* 输入框和选择框样式 */
         #dialog-box input,
         #dialog-box select {
@@ -323,7 +292,6 @@ const HTML_CONTENT = `
             /* 确保填充不影响宽度 */
             box-sizing: border-box;
         }
-
         /* 按钮样式 */
         #dialog-box button {
             width: 48%;
@@ -333,7 +301,6 @@ const HTML_CONTENT = `
             border-radius: 5px;
             cursor: pointer;
         }
-
         /* 确定按钮 */
         #dialog-box button.btn-t {
             /* 绿色背景 */
@@ -341,7 +308,6 @@ const HTML_CONTENT = `
             /* 白色文本 */
             color: white;
         }
-
         /* 取消按钮 */
         #dialog-box button.btn-f {
             /* 红色背景 */
@@ -349,7 +315,6 @@ const HTML_CONTENT = `
             /* 白色文本 */
             color: white;
         }
-
         /* 私密链接容器 */
         .private-link-container {
             display: flex;
@@ -357,24 +322,20 @@ const HTML_CONTENT = `
             margin-bottom: 15px;
             white-space: nowrap;
         }
-
         /* 私密复选框 */
         #private-checkbox {
             /* 标签和复选框之间的间距 */
             margin-left: 10px;
         }
-
         /* 分类和卡片样式 */
         .section {
             margin-bottom: 20px;
         }
-
         .section-title-container {
             display: flex;
             align-items: center;
             margin-bottom: 10px;
         }
-
         .section-title {
             color: white;
             font-size: 18px;
@@ -382,7 +343,6 @@ const HTML_CONTENT = `
             white-space: nowrap;
             /* 阻止文本自动换行 */
         }
-
         /* 删除按钮样式 */
         .delete-category-btn {
             background-color: #f44336;
@@ -393,11 +353,9 @@ const HTML_CONTENT = `
             border-radius: 5px;
             cursor: pointer;
         }
-
         .delete-category-btn:hover {
             background-color: #d32f2f;
         }
-
         /* 修改按钮样式 */
         .edit-category-btn {
             background-color: #ff9800;
@@ -408,11 +366,9 @@ const HTML_CONTENT = `
             border-radius: 5px;
             cursor: pointer;
         }
-
         .edit-category-btn:hover {
             background-color: #388e3c;
         }
-
         /* 卡片样式 */
         .card-container {
             display: flex;
@@ -423,7 +379,6 @@ const HTML_CONTENT = `
             padding: 10px;
             /* 添加一些内边距以适应不同屏幕 */
         }
-
         /* 单张卡片样式 */
         .card {
             border-radius: 10px;
@@ -445,25 +400,21 @@ const HTML_CONTENT = `
             box-sizing: border-box;
             /* 确保填充不影响宽度 */
         }
-
         .card:hover {
             transform: translateY(-10px);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             height: auto;
         }
-
         .card-top {
             display: flex;
             align-items: center;
             margin-bottom: 10px;
         }
-
         .card-icon {
             width: 24px;
             height: 24px;
             margin-right: 10px;
         }
-
         .card-title {
             font-size: 16px;
             font-weight: bold;
@@ -471,14 +422,12 @@ const HTML_CONTENT = `
             overflow: hidden;
             text-overflow: ellipsis;
         }
-
         .card-url {
             font-size: 10px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
         }
-
         .card-introduction {
             font-size: 13px;
             max-height: 50%;
@@ -486,13 +435,11 @@ const HTML_CONTENT = `
             text-overflow: ellipsis;
             transition: max-height 0.4s ease-out;
         }
-
         .card:hover .card-introduction {
             white-space: normal;
             overflow: visible;
             max-height: 100%;
         }
-
         .private-tag {
             background-color: #ff9800;
             color: white;
@@ -503,7 +450,6 @@ const HTML_CONTENT = `
             top: 5px;
             right: 5px;
         }
-
         .delete-btn {
             position: absolute;
             top: -10px;
@@ -520,7 +466,6 @@ const HTML_CONTENT = `
             cursor: pointer;
             display: none;
         }
-
         /* 版权信息样式 */
         #copyright {
             position: fixed;
@@ -536,48 +481,39 @@ const HTML_CONTENT = `
             z-index: 100;
             box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
         }
-
         #copyright p {
             margin: 0;
         }
-
         #copyright a {
             color: #007bff;
             text-decoration: none;
         }
-
         #copyright a:hover {
             text-decoration: underline;
         }
-
         /* 响应式设计 */
         @media (max-width: 480px) {
             .searchpage {
                 position: relative;
                 padding: 5px;
             }
-
             .content {
                 margin-top: 10px;
             }
-
             .admin-controls input,
             .admin-controls button {
                 height: 30%;
             }
-
             .card-container {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
             }
-
             .card {
                 width: 80%;
                 max-width: none;
                 padding: 5px;
             }
-
             .card-title {
                 font-size: 12px;
                 white-space: nowrap;
@@ -585,7 +521,6 @@ const HTML_CONTENT = `
                 text-overflow: ellipsis;
                 max-width: 130px;
             }
-
             .card-url {
                 font-size: 10px;
                 white-space: nowrap;
@@ -593,11 +528,9 @@ const HTML_CONTENT = `
                 text-overflow: ellipsis;
                 max-width: 130px;
             }
-
             .add-remove-controls {
                 right: 2px;
             }
-
             .round-btn,
             #theme-toggle {
                 right: 5px;
@@ -609,86 +542,8 @@ const HTML_CONTENT = `
                 font-size: 24px;
             }
         }
-
-        /* 修改卡片对话框 */
-        #edit-dialog-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
-        }
-
-        #edit-dialog-box {
-            background-color: #ffffff;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            width: 320px;
-        }
-
-        #edit-dialog-box label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        #edit-dialog-box select,
-        #edit-dialog-box input[type="text"] {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-
-        #edit-dialog-box button {
-            width: 48%;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-
-        #edit-dialog-box button.btn-t {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        #edit-dialog-box button.btn-f {
-            background-color: #f44336;
-            color: white;
-        }
-
-        /* 添加编辑按钮样式 */
-        .edit-btn {
-            position: absolute;
-            bottom: -10px;
-            right: -10px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 20px;
-            height: 20px;
-            text-align: center;
-            font-size: 14px;
-            line-height: 20px;
-            cursor: pointer;
-            display: none;
-        }
-
-        .card:hover .edit-btn {
-            display: block;
-        }
     </style>
 </head>
-
 <body>
     <div class="allbodydiv">
         <!-- 一言模块 -->
@@ -764,244 +619,9 @@ const HTML_CONTENT = `
             </div>
         </div>
     </div>
-    <!-- 修改卡片对话框 -->
-    <div id="edit-dialog-overlay" class="dialog-overlay">
-        <div id="edit-dialog-box" class="dialog-box">
-            <label for="edit-category-select">网站类型</label>
-            <select id="edit-category-select"></select>
-            <label for="edit-name-input">网站名字</label>
-            <input type="text" id="edit-name-input">
-            <label for="edit-url-input">网站地址</label>
-            <input type="text" id="edit-url-input">
-            <label for="edit-introduction-input">网站简介</label>
-            <input type="text" id="edit-introduction-input">
-            <div class="private-link-container">
-                <label for="edit-private-checkbox">VIP观看</label>
-                <input type="checkbox" id="edit-private-checkbox">
-            </div>
-            <button class="btn-t" onclick="saveEditCard()">保存 √</button>
-            <button class="btn-f" onclick="hideEditDialog()">取消 X</button>
-        </div>
-    </div>
     <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
     <script>
-        // 1. 配置对象 - 统一管理常量和配置
-        const CONFIG = {
-            API_ENDPOINTS: {
-                GET_LINKS: '/api/getLinks',
-                SAVE_ORDER: '/api/saveOrder',
-                VERIFY_PASSWORD: '/api/verifyPassword',
-                BACKUP_DATA: '/api/backupData'
-            },
-            DEFAULT_USER: 'testUser',
-            BACKUP_USER: 'backup'
-        };
-
-        // 2. 状态管理
-        const AppState = {
-            isAdmin: false,
-            isLoggedIn: false,
-            removeMode: false,
-            isRemoveCategoryMode: false,
-            isDarkTheme: false,
-            draggedCard: null,
-            touchStartX: null,
-            touchStartY: null,
-
-            // 状态更新方法
-            setAdminMode(value) {
-                this.isAdmin = value;
-                this.updateUI();
-            },
-
-            setLoginState(value) {
-                this.isLoggedIn = value;
-                this.updateUI();
-            },
-
-            updateUI() {
-                updateUIState();
-            }
-        };
-
-        // 3. 数据管理
-        const DataManager = {
-            publicLinks: [],
-            privateLinks: [],
-            categories: {},
-
-            async loadData() {
-                try {
-                    const response = await this.fetchLinks();
-                    if (!response.ok) throw new Error("HTTP error! status: " + response.status);
-
-                    const data = await response.json();
-                    this.processData(data);
-                    return true;
-                } catch (error) {
-                    console.error('Error loading data:', error);
-                    return false;
-                }
-            },
-
-            processData(data) {
-                if (data.categories) {
-                    Object.assign(this.categories, data.categories);
-                }
-                this.publicLinks = data.links?.filter(link => !link.isPrivate) || [];
-                this.privateLinks = data.links?.filter(link => link.isPrivate) || [];
-            },
-
-            async saveData() {
-                if (!await validateToken()) return false;
-
-                try {
-                    const response = await fetch(CONFIG.API_ENDPOINTS.SAVE_ORDER, {
-                        method: 'POST',
-                        headers: this.getHeaders(),
-                        body: JSON.stringify({
-                            userId: CONFIG.DEFAULT_USER,
-                            links: [...this.publicLinks, ...this.privateLinks],
-                            categories: this.categories
-                        })
-                    });
-                    return response.ok;
-                } catch (error) {
-                    console.error('Save failed:', error);
-                    return false;
-                }
-            },
-
-            getHeaders() {
-                const headers = {
-                    'Content-Type': 'application/json'
-                };
-                const token = localStorage.getItem('authToken');
-                if (token) {
-                    headers['Authorization'] = token;
-                }
-                return headers;
-            }
-        };
-
-        // 4. UI管理器
-        const UIManager = {
-            // 卡片相关
-            createCard(link, container) {
-                const card = document.createElement('div');
-                card.className = 'card';
-                // ... existing card creation code ...
-
-                this.addCardEventListeners(card);
-                return card;
-            },
-
-            addCardEventListeners(card) {
-                if (AppState.isAdmin) {
-                    card.setAttribute('draggable', true);
-                    card.addEventListener('dragstart', this.handleDragStart);
-                    card.addEventListener('dragover', this.handleDragOver);
-                    card.addEventListener('drop', this.handleDrop);
-                    card.addEventListener('touchstart', this.handleTouchStart);
-                }
-            },
-
-            // 对话框管理
-            showDialog(dialogId) {
-                document.getElementById(dialogId).style.display = 'flex';
-            },
-
-            hideDialog(dialogId) {
-                document.getElementById(dialogId).style.display = 'none';
-            },
-
-            // 主题管理
-            updateTheme() {
-                const theme = AppState.isDarkTheme ? this.darkTheme : this.lightTheme;
-                this.applyTheme(theme);
-            }
-        };
-
-        // 5. 事件处理器
-        const EventHandlers = {
-            async handleLogin(password) {
-                try {
-                    const result = await AuthService.verifyPassword(password);
-                    if (result.valid) {
-                        AppState.setLoginState(true);
-                        localStorage.setItem('authToken', result.token);
-                        await DataManager.loadData();
-                    }
-                    return result.valid;
-                } catch (error) {
-                    console.error('Login error:', error);
-                    return false;
-                }
-            },
-
-            handleCardEdit(card) {
-                if (!AppState.isAdmin) return;
-                UIManager.showEditDialog(card);
-            },
-
-            async handleCardSave(cardData) {
-                if (!await validateToken()) return;
-                await DataManager.updateCard(cardData);
-                UIManager.hideEditDialog();
-            }
-        };
-
-        // 6. 认证服务
-        const AuthService = {
-            async verifyPassword(password) {
-                const response = await fetch(CONFIG.API_ENDPOINTS.VERIFY_PASSWORD, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ password })
-                });
-                return response.json();
-            },
-
-            async validateToken() {
-                const token = localStorage.getItem('authToken');
-                if (!token) return false;
-
-                try {
-                    const response = await fetch(CONFIG.API_ENDPOINTS.GET_LINKS, {
-                        headers: { 'Authorization': token }
-                    });
-                    return response.status !== 401;
-                } catch (error) {
-                    return false;
-                }
-            }
-        };
-
-        // 7. 工具函数
-        const Utils = {
-            generateRandomHex() {
-                // ... existing color generation code ...
-            },
-
-            getTextColorBasedOnBackground(hex) {
-                // ... existing color calculation code ...
-            },
-
-            logAction(action, details) {
-                const timestamp = new Date().toISOString(); 
-            }
-        };
-
-        // 初始化
-        document.addEventListener('DOMContentLoaded', async () => {
-            if (await AuthService.validateToken()) {
-                AppState.setLoginState(true);
-            }
-            await DataManager.loadData();
-            UIManager.updateTheme();
-        });
-
-        // 动态设置背景及颜色
+        //动态设置背景及颜色
         function generateRandomBackgroundImage() {
             // Array of sample image URLs
             const backgrounds = [
@@ -1157,7 +777,7 @@ const HTML_CONTENT = `
                 }
                 btn.style.color = textcolor;
             });
-            Utils.logAction('设置搜索引擎', { engine });
+            logAction('设置搜索引擎', { engine });
         }
         // 搜索引擎按钮点击事件
         document.querySelectorAll('.search-engine').forEach(button => {
@@ -1167,7 +787,7 @@ const HTML_CONTENT = `
         document.getElementById('search-button').addEventListener('click', () => {
             const query = document.getElementById('search-input').value;
             if (query) {
-                Utils.logAction('执行搜索', { engine: currentEngine, query });
+                logAction('执行搜索', { engine: currentEngine, query });
                 window.open(searchEngines[currentEngine] + encodeURIComponent(query), '_blank');
             }
         });
@@ -1200,10 +820,10 @@ const HTML_CONTENT = `
                 updateCategorySelect();
                 renderCategories();
                 saveLinks();
-                Utils.logAction('添加分类', { categoryName, currentLinkCount: links.length });
+                logAction('添加分类', { categoryName, currentLinkCount: links.length });
             } else if (categories[categoryName]) {
                 alert('该分类已存在');
-                Utils.logAction('添加分类失败', { categoryName, reason: '分类已存在' });
+                logAction('添加分类失败', { categoryName, reason: '分类已存在' });
             }
         }
         // 修改分类名称
@@ -1227,10 +847,10 @@ const HTML_CONTENT = `
                 updateCategorySelect();
                 renderCategories();
                 saveLinks();
-                Utils.logAction('修改分类', { oldCategoryName, newCategoryName });
+                logAction('修改分类', { oldCategoryName, newCategoryName });
             } else if (newCategoryName && categories[newCategoryName]) {
                 alert('该分类名已存在');
-                Utils.logAction('修改分类失败', { oldCategoryName, reason: '新分类名已存在' });
+                logAction('修改分类失败', { oldCategoryName, reason: '新分类名已存在' });
             } else if (!newCategoryName) {
                 alert('分类名不能为空');
             }
@@ -1248,7 +868,7 @@ const HTML_CONTENT = `
                 updateCategorySelect();
                 saveLinks();
                 renderCategories();
-                Utils.logAction('删除分类', { category });
+                logAction('删除分类', { category });
             }
         }
         // 渲染分类
@@ -1295,7 +915,7 @@ const HTML_CONTENT = `
                     arrow.textContent = isCurrentlyCollapsed ? '' : '▲';
                     // 更新缓存
                     localStorage.setItem(category, isCurrentlyCollapsed ? 'expanded' : 'collapsed');
-                    Utils.logAction(isCurrentlyCollapsed ? '展开分类' : '收缩分类', { category });
+                    logAction(isCurrentlyCollapsed ? '展开分类' : '收缩分类', { category });
                 };
                 if (isAdmin) {
                     // 添加删除分类按钮
@@ -1314,7 +934,7 @@ const HTML_CONTENT = `
                     titleContainer.appendChild(editBtn);
                 }
             });
-            Utils.logAction('渲染分类', { categoryCount: Object.keys(categories).length, linkCount: links.length });
+            logAction('渲染分类', { categoryCount: Object.keys(categories).length, linkCount: links.length });
         }
         // 读取链接数据
         async function loadLinks() {
@@ -1346,7 +966,7 @@ const HTML_CONTENT = `
                 loadSections();
                 updateCategorySelect();
                 updateUIState();
-                Utils.logAction('读取链接', {
+                logAction('读取链接', {
                     publicCount: publicLinks.length,
                     privateCount: privateLinks.length,
                     isLoggedIn: isLoggedIn,
@@ -1378,7 +998,7 @@ const HTML_CONTENT = `
                 adminBtn.style.display = 'none';
                 addRemoveControls.style.display = 'none';
             }
-            Utils.logAction('更新UI状态', { isAdmin, isLoggedIn });
+            logAction('更新UI状态', { isAdmin, isLoggedIn });
         }
         // 登录状态显示（加载所有链接）
         function showSecretGarden() {
@@ -1389,7 +1009,7 @@ const HTML_CONTENT = `
                 document.querySelectorAll('.private-tag').forEach(tag => {
                     tag.style.display = 'block';
                 });
-                Utils.logAction('显示私密花园');
+                logAction('显示私密花园');
             }
         }
         // 分类初始化设置
@@ -1437,7 +1057,7 @@ const HTML_CONTENT = `
                     arrow.textContent = isCurrentlyCollapsed ? '' : '▲';
                     // 保存展开/收缩状态到 localStorage
                     localStorage.setItem(category, isCurrentlyCollapsed ? 'expanded' : 'collapsed');
-                    Utils.logAction(isCurrentlyCollapsed ? '展开分类' : '收缩分类', { category });
+                    logAction(isCurrentlyCollapsed ? '展开分类' : '收缩分类', { category });
                 };
                 if (isAdmin) {
                     // 添加删除分类按钮
@@ -1457,7 +1077,7 @@ const HTML_CONTENT = `
                 }
             });
             window.scrollTo(0, scrollPosition);
-            Utils.logAction('加载分类和链接', {
+            logAction('加载分类和链接', {
                 isAdmin: isAdmin,
                 linkCount: links.length,
                 categoryCount: Object.keys(categories).length
@@ -1523,7 +1143,7 @@ const HTML_CONTENT = `
             if (!isAdmin) {
                 card.addEventListener('click', () => {
                     window.open(correctedUrl, '_blank');
-                    Utils.logAction('打开链接', { name: link.name, url: correctedUrl });
+                    logAction('打开链接', { name: link.name, url: correctedUrl });
                 });
             }
             const deleteBtn = document.createElement('button');
@@ -1546,18 +1166,7 @@ const HTML_CONTENT = `
             if (isAdmin || (link.isPrivate && isLoggedIn) || !link.isPrivate) {
                 container.appendChild(card);
             }
-            Utils.logAction('创建卡片', { name: link.name, isPrivate: link.isPrivate });
-            if (isAdmin) {
-                // 添加编辑按钮
-                const editBtn = document.createElement('button');
-                editBtn.textContent = '✎';
-                editBtn.className = 'edit-btn';
-                editBtn.onclick = function (event) {
-                    event.stopPropagation();
-                    editCard(card);
-                };
-                card.appendChild(editBtn);
-            }
+            logAction('创建卡片', { name: link.name, isPrivate: link.isPrivate });
         }
         // 更新卡片样式
         function updateCardStyle(card) {
@@ -1589,7 +1198,7 @@ const HTML_CONTENT = `
                 option.textContent = category;
                 categorySelect.appendChild(option);
             });
-            Utils.logAction('更新分类选择', { categoryCount: Object.keys(categories).length });
+            logAction('更新分类选择', { categoryCount: Object.keys(categories).length });
         }
         // 保存链接数据
         async function saveLinks() {
@@ -1610,9 +1219,9 @@ const HTML_CONTENT = `
                         categories: categories
                     }),
                 });
-                Utils.logAction('保存链接', { linkCount: allLinks.length, categoryCount: Object.keys(categories).length });
+                logAction('保存链接', { linkCount: allLinks.length, categoryCount: Object.keys(categories).length });
             } catch (error) {
-                Utils.logAction('保存链接失败', { error: error.message });
+                logAction('保存链接失败', { error: error.message });
                 alert('保存链接失败，请重试');
             }
         }
@@ -1648,7 +1257,7 @@ const HTML_CONTENT = `
                 document.getElementById('url-input').value = '';
                 document.getElementById('private-checkbox').checked = false;
                 hideAddDialog();
-                Utils.logAction('添加卡片', { name, url, category, isPrivate });
+                logAction('添加卡片', { name, url, category, isPrivate });
             }
         }
         // 删除卡片
@@ -1670,7 +1279,7 @@ const HTML_CONTENT = `
             }
             card.remove();
             saveLinks();
-            Utils.logAction('删除卡片', { name, url, isPrivate });
+            logAction('删除卡片', { name, url, isPrivate });
         }
         // 拖拽卡片
         let draggedCard = null;
@@ -1741,7 +1350,7 @@ const HTML_CONTENT = `
             if (!draggedCard) return;
             draggedCard.classList.add('dragging');
             event.dataTransfer.effectAllowed = "move";
-            Utils.logAction('开始拖拽卡片', { name: draggedCard.querySelector('.card-title').textContent });
+            logAction('开始拖拽卡片', { name: draggedCard.querySelector('.card-title').textContent });
         }
         function dragOver(event) {
             if (!isAdmin) {
@@ -1795,7 +1404,7 @@ const HTML_CONTENT = `
         function dragEnd(event) {
             if (draggedCard) {
                 draggedCard.classList.remove('dragging');
-                Utils.logAction('拖拽卡片结束');
+                logAction('拖拽卡片结束');
             }
         }
         // 更新卡片分类
@@ -1853,7 +1462,7 @@ const HTML_CONTENT = `
             privateLinks.push(...newPrivateLinks);
             Object.keys(categories).forEach(key => delete categories[key]);
             Object.assign(categories, newCategories);
-            Utils.logAction('保存卡片顺序', {
+            logAction('保存卡片顺序', {
                 publicCount: newPublicLinks.length,
                 privateCount: newPrivateLinks.length,
                 categoryCount: Object.keys(newCategories).length
@@ -1875,9 +1484,9 @@ const HTML_CONTENT = `
                 if (!result.success) {
                     throw new Error('Failed to save order');
                 }
-                Utils.logAction('保存卡片顺序', { publicCount: newPublicLinks.length, privateCount: newPrivateLinks.length, categoryCount: Object.keys(newCategories).length });
+                logAction('保存卡片顺序', { publicCount: newPublicLinks.length, privateCount: newPrivateLinks.length, categoryCount: Object.keys(newCategories).length });
             } catch (error) {
-                Utils.logAction('保存顺序失败', { error: error.message });
+                logAction('保存顺序失败', { error: error.message });
                 alert('保存顺序失败，请重试');
             }
         }
@@ -1891,7 +1500,7 @@ const HTML_CONTENT = `
                     applyDarkTheme();
                 }
             });
-            Utils.logAction('重新加载卡片（管理员模式）');
+            logAction('重新加载卡片（管理员模式）');
         }
         // 密码输入框回车事件
         document.getElementById('admin-password').addEventListener('keypress', (e) => {
@@ -1922,12 +1531,12 @@ const HTML_CONTENT = `
                     });
                     const result = await response.json();
                     if (result.success) {
-                        Utils.logAction('数据备份成功');
+                        logAction('数据备份成功');
                     } else {
                         throw new Error('备份失败');
                     }
                 } catch (error) {
-                    Utils.logAction('数据备份失败', { error: error.message });
+                    logAction('数据备份失败', { error: error.message });
                     if (!confirm('备份失败，是否仍要继续进入设置模式？')) {
                         return;
                     }
@@ -1937,7 +1546,7 @@ const HTML_CONTENT = `
                 addRemoveControls.style.display = 'flex';
                 //alert('准备设置分类和书签');
                 reloadCardsAsAdmin();
-                Utils.logAction('进入设置');
+                logAction('进入设置');
             } else if (isAdmin) {
                 isAdmin = false;
                 removeMode = false;
@@ -1945,7 +1554,7 @@ const HTML_CONTENT = `
                 addRemoveControls.style.display = 'none';
                 //alert('设置已保存');
                 reloadCardsAsAdmin();
-                Utils.logAction('离开设置');
+                logAction('离开设置');
             }
             updateUIState();
         }
@@ -1961,10 +1570,10 @@ const HTML_CONTENT = `
                             console.log('Token saved:', result.token);
                             loadLinks();
                             //alert('登录成功！');
-                            Utils.logAction('登录成功');
+                            logAction('登录成功');
                         } else {
                             alert('密码错误');
-                            Utils.logAction('登录失败', { reason: result.error || '密码错误' });
+                            logAction('登录失败', { reason: result.error || '密码错误' });
                         }
                         updateUIState();
                     })
@@ -1981,7 +1590,7 @@ const HTML_CONTENT = `
                 alert('退出登录！');
                 updateUIState();
                 passwordInput.value = '';
-                Utils.logAction('退出登录');
+                logAction('退出登录');
             }
         }
         // 应用暗色主题
@@ -1994,17 +1603,17 @@ const HTML_CONTENT = `
                 card.style.color = '#ffffff';
                 card.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.5)';
             });
-            Utils.logAction('应用暗色主题');
+            logAction('应用暗色主题');
         }
         // 显示添加链接对话框
         function showAddDialog() {
             document.getElementById('dialog-overlay').style.display = 'flex';
-            Utils.logAction('显示添加链接对话框');
+            logAction('显示添加链接对话框');
         }
         // 隐藏添加链接对话框
         function hideAddDialog() {
             document.getElementById('dialog-overlay').style.display = 'none';
-            Utils.logAction('隐藏添加链接对话框');
+            logAction('隐藏添加链接对话框');
         }
         // 切换删除卡片模式
         function toggleRemoveMode() {
@@ -2013,14 +1622,14 @@ const HTML_CONTENT = `
             deleteButtons.forEach(btn => {
                 btn.style.display = removeMode ? 'block' : 'none';
             });
-            Utils.logAction('切换删除卡片模式', { removeMode });
+            logAction('切换删除卡片模式', { removeMode });
         }
         // 切换删除分类模式
         function toggleRemoveCategory() {
             isRemoveCategoryMode = !isRemoveCategoryMode;
             // 获取删除和修改按钮
             const deleteButtons = document.querySelectorAll('.delete-category-btn');
-            const editButtons = document.querySelectorAll('.edit-category-btn'); // 获取"修改分类"按钮
+            const editButtons = document.querySelectorAll('.edit-category-btn'); // 获取“修改分类”按钮
             // 控制删除按钮的显示状态
             deleteButtons.forEach(btn => {
                 btn.style.display = isRemoveCategoryMode ? 'inline-block' : 'none';
@@ -2029,10 +1638,36 @@ const HTML_CONTENT = `
             editButtons.forEach(btn => {
                 btn.style.display = !isRemoveCategoryMode ? 'inline-block' : 'none';
             });
-            Utils.logAction('切换删除分类模式', { isRemoveCategoryMode });
+            logAction('切换删除分类模式', { isRemoveCategoryMode });
         }
         // 切换主题
         function toggleTheme() {
+            // isDarkTheme = !isDarkTheme;
+            // document.body.style.backgroundColor = isDarkTheme ? '#121212' : '#e8f4ea';
+            // document.body.style.color = isDarkTheme ? '#ffffff' : '#333';
+            // const cards = document.querySelectorAll('.card');
+            // cards.forEach(card => {
+            //     card.style.backgroundColor = isDarkTheme ? '#1e1e1e' : '#b8c9d9';
+            //     card.style.color = isDarkTheme ? '#ffffff' : '#333';
+            //     card.style.boxShadow = isDarkTheme
+            //         ? '0 4px 8px rgba(0, 0, 0, 0.5)'
+            //         : '0 4px 8px rgba(0, 0, 0, 0.1)';
+            // });
+            // const searchpage = document.querySelectorAll('.searchpage');
+            // searchpage.forEach(element => {
+            //     element.style.backgroundColor = isDarkTheme ? '#121212' : '#e8f4ea';
+            //     element.style.color = isDarkTheme ? '#ffffff' : '#333';
+            // });
+            // const dialogBox = document.getElementById('dialog-box');
+            // dialogBox.style.backgroundColor = isDarkTheme ? '#1e1e1e' : '#ffffff';
+            // dialogBox.style.color = isDarkTheme ? '#ffffff' : '#333';
+            // const inputs = document.querySelectorAll('input[type="text"], input[type="password"], select');
+            // inputs.forEach(input => {
+            //     input.style.backgroundColor = isDarkTheme ? '#444' : '#fff';
+            //     input.style.color = isDarkTheme ? '#fff' : '#333';
+            //     input.style.borderColor = isDarkTheme ? '#555' : '#ccc';
+            // });
+            // logAction('切换主题', { isDarkTheme });
             colorbackground = generateRandomHex();
             textcolor = getTextColorBasedOnBackground(colorbackground);
             headbackground = generateRandomBackgroundImage();
@@ -2113,229 +1748,228 @@ const HTML_CONTENT = `
         }
     </script>
 </body>
-
 </html>
 `;
 // 服务端 token 验证
 async function validateServerToken(authToken, env) {
-    if (!authToken) {
-        return {
-            isValid: false,
-            status: 401,
-            response: { error: 'Unauthorized', message: '未登录或登录已过期' }
-        };
-    }
-    try {
-        const [timestamp, hash] = authToken.split('.');
-        const tokenTimestamp = parseInt(timestamp);
-        const now = Date.now();
-        const FIFTEEN_MINUTES = 15 * 60 * 1000;
-        if (now - tokenTimestamp > FIFTEEN_MINUTES) {
-            return {
-                isValid: false,
-                status: 401,
-                response: {
-                    error: 'Token expired',
-                    tokenExpired: true,
-                    //message: '登录已过期，请重新登录'
-                }
-            };
-        }
-        const tokenData = timestamp + "_" + env.ADMIN_PASSWORD;
-        const encoder = new TextEncoder();
-        const data = encoder.encode(tokenData);
-        const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-        const expectedHash = btoa(String.fromCharCode(...new Uint8Array(hashBuffer)));
-        if (hash !== expectedHash) {
-            return {
-                isValid: false,
-                status: 401,
-                response: {
-                    error: 'Invalid token',
-                    tokenInvalid: true,
-                    message: '登录状态无效，请重新登录'
-                }
-            };
-        }
-        return { isValid: true };
-    } catch (error) {
-        return {
-            isValid: false,
-            status: 401,
-            response: {
-                error: 'Invalid token',
-                tokenInvalid: true,
-                message: '登录验证失败，请重新登录'
-            }
-        };
-    }
+if (!authToken) {
+return {
+isValid: false,
+status: 401,
+response: { error: 'Unauthorized', message: '未登录或登录已过期' }
+};
+}
+try {
+const [timestamp, hash] = authToken.split('.');
+const tokenTimestamp = parseInt(timestamp);
+const now = Date.now();
+const FIFTEEN_MINUTES = 15 * 60 * 1000;
+if (now - tokenTimestamp > FIFTEEN_MINUTES) {
+return {
+isValid: false,
+status: 401,
+response: {
+error: 'Token expired',
+tokenExpired: true,
+//message: '登录已过期，请重新登录'
+}
+};
+}
+const tokenData = timestamp + "_" + env.ADMIN_PASSWORD;
+const encoder = new TextEncoder();
+const data = encoder.encode(tokenData);
+const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+const expectedHash = btoa(String.fromCharCode(...new Uint8Array(hashBuffer)));
+if (hash !== expectedHash) {
+return {
+isValid: false,
+status: 401,
+response: {
+error: 'Invalid token',
+tokenInvalid: true,
+message: '登录状态无效，请重新登录'
+}
+};
+}
+return { isValid: true };
+} catch (error) {
+return {
+isValid: false,
+status: 401,
+response: {
+error: 'Invalid token',
+tokenInvalid: true,
+message: '登录验证失败，请重新登录'
+}
+};
+}
 }
 export default {
-    async fetch(request, env) {
-        const url = new URL(request.url);
-        if (url.pathname === '/') {
-            return new Response(HTML_CONTENT, {
-                headers: { 'Content-Type': 'text/html' }
-            });
-        }
-        if (url.pathname === '/api/getLinks') {
-            const userId = url.searchParams.get('userId');
-            const authToken = request.headers.get('Authorization');
-            const data = await env.CARD_ORDER.get(userId);
-            if (data) {
-                const parsedData = JSON.parse(data);
-                // 验证 token
-                if (authToken) {
-                    const validation = await validateServerToken(authToken, env);
-                    if (!validation.isValid) {
-                        return new Response(JSON.stringify(validation.response), {
-                            status: validation.status,
-                            headers: { 'Content-Type': 'application/json' }
-                        });
-                    }
-                    // Token 有效，返回完整数据
-                    return new Response(JSON.stringify(parsedData), {
-                        status: 200,
-                        headers: { 'Content-Type': 'application/json' }
-                    });
-                }
-                // 未提供 token，只返回公开数据
-                const filteredLinks = parsedData.links.filter(link => !link.isPrivate);
-                const filteredCategories = {};
-                Object.keys(parsedData.categories).forEach(category => {
-                    filteredCategories[category] = parsedData.categories[category].filter(link => !link.isPrivate);
-                });
-                return new Response(JSON.stringify({
-                    links: filteredLinks,
-                    categories: filteredCategories
-                }), {
-                    status: 200,
-                    headers: { 'Content-Type': 'application/json' }
-                });
-            }
-            return new Response(JSON.stringify({
-                links: [],
-                categories: {}
-            }), {
-                status: 200,
-                headers: { 'Content-Type': 'application/json' }
-            });
-        }
-        if (url.pathname === '/api/saveOrder' && request.method === 'POST') {
-            const authToken = request.headers.get('Authorization');
-            const validation = await validateServerToken(authToken, env);
-            if (!validation.isValid) {
-                return new Response(JSON.stringify(validation.response), {
-                    status: validation.status,
-                    headers: { 'Content-Type': 'application/json' }
-                });
-            }
-            const { userId, links, categories } = await request.json();
-            await env.CARD_ORDER.put(userId, JSON.stringify({ links, categories }));
-            return new Response(JSON.stringify({
-                success: true,
-                message: '保存成功'
-            }), {
-                status: 200,
-                headers: { 'Content-Type': 'application/json' }
-            });
-        }
-        if (url.pathname === '/api/verifyPassword' && request.method === 'POST') {
-            try {
-                const { password } = await request.json();
-                const isValid = password === env.ADMIN_PASSWORD;
-                if (isValid) {
-                    // 生成包含时间戳的加密 token
-                    const timestamp = Date.now();
-                    const tokenData = timestamp + "_" + env.ADMIN_PASSWORD;
-                    const encoder = new TextEncoder();
-                    const data = encoder.encode(tokenData);
-                    const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-                    // 使用指定格式：timestamp.hash
-                    const token = timestamp + "." + btoa(String.fromCharCode(...new Uint8Array(hashBuffer)));
-                    return new Response(JSON.stringify({
-                        valid: true,
-                        token: token
-                    }), {
-                        status: 200,
-                        headers: { 'Content-Type': 'application/json' }
-                    });
-                }
-                return new Response(JSON.stringify({
-                    valid: false,
-                    error: 'Invalid password'
-                }), {
-                    status: 403,
-                    headers: { 'Content-Type': 'application/json' }
-                });
-            } catch (error) {
-                return new Response(JSON.stringify({
-                    valid: false,
-                    error: error.message
-                }), {
-                    status: 500,
-                    headers: { 'Content-Type': 'application/json' }
-                });
-            }
-        }
-        if (url.pathname === '/api/backupData' && request.method === 'POST') {
-            const { sourceUserId } = await request.json();
-            const result = await this.backupData(env, sourceUserId);
-            return new Response(JSON.stringify(result), {
-                status: result.success ? 200 : 404,
-                headers: { 'Content-Type': 'application/json' }
-            });
-        }
-        return new Response('Not Found', { status: 404 });
-    },
-    async backupData(env, sourceUserId) {
-        const MAX_BACKUPS = 10;
-        const sourceData = await env.CARD_ORDER.get(sourceUserId);
-        if (sourceData) {
-            try {
-                const currentDate = new Date().toLocaleString('zh-CN', {
-                    timeZone: 'Asia/Shanghai',
-                    year: 'numeric',
-                    month: '2-digit',
-                    day: '2-digit',
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    second: '2-digit',
-                    hour12: false
-                }).replace(/\//g, '-');
-                const backupId = `backup_${currentDate}`;
-                const backups = await env.CARD_ORDER.list({ prefix: 'backup_' });
-                const backupKeys = backups.keys.map(key => key.name).sort((a, b) => {
-                    const timeA = new Date(a.split('_')[1].replace(/-/g, '/')).getTime();
-                    const timeB = new Date(b.split('_')[1].replace(/-/g, '/')).getTime();
-                    return timeB - timeA; // 降序排序，最新的在前
-                });
-                await env.CARD_ORDER.put(backupId, sourceData);
-                const allBackups = [...backupKeys, backupId].sort((a, b) => {
-                    const timeA = new Date(a.split('_')[1].replace(/-/g, '/')).getTime();
-                    const timeB = new Date(b.split('_')[1].replace(/-/g, '/')).getTime();
-                    return timeB - timeA;
-                });
-                const backupsToDelete = allBackups.slice(MAX_BACKUPS);
-                if (backupsToDelete.length > 0) {
-                    await Promise.all(
-                        backupsToDelete.map(key => env.CARD_ORDER.delete(key))
-                    );
-                }
-                return {
-                    success: true,
-                    backupId,
-                    remainingBackups: MAX_BACKUPS,
-                    deletedCount: backupsToDelete.length
-                };
-            } catch (error) {
-                return {
-                    success: false,
-                    error: 'Backup operation failed',
-                    details: error.message
-                };
-            }
-        }
-        return { success: false, error: 'Source data not found' };
-    }
+async fetch(request, env) {
+const url = new URL(request.url);
+if (url.pathname === '/') {
+return new Response(HTML_CONTENT, {
+headers: { 'Content-Type': 'text/html' }
+});
+}
+if (url.pathname === '/api/getLinks') {
+const userId = url.searchParams.get('userId');
+const authToken = request.headers.get('Authorization');
+const data = await env.CARD_ORDER.get(userId);
+if (data) {
+const parsedData = JSON.parse(data);
+// 验证 token
+if (authToken) {
+const validation = await validateServerToken(authToken, env);
+if (!validation.isValid) {
+return new Response(JSON.stringify(validation.response), {
+status: validation.status,
+headers: { 'Content-Type': 'application/json' }
+});
+}
+// Token 有效，返回完整数据
+return new Response(JSON.stringify(parsedData), {
+status: 200,
+headers: { 'Content-Type': 'application/json' }
+});
+}
+// 未提供 token，只返回公开数据
+const filteredLinks = parsedData.links.filter(link => !link.isPrivate);
+const filteredCategories = {};
+Object.keys(parsedData.categories).forEach(category => {
+filteredCategories[category] = parsedData.categories[category].filter(link => !link.isPrivate);
+});
+return new Response(JSON.stringify({
+links: filteredLinks,
+categories: filteredCategories
+}), {
+status: 200,
+headers: { 'Content-Type': 'application/json' }
+});
+}
+return new Response(JSON.stringify({
+links: [],
+categories: {}
+}), {
+status: 200,
+headers: { 'Content-Type': 'application/json' }
+});
+}
+if (url.pathname === '/api/saveOrder' && request.method === 'POST') {
+const authToken = request.headers.get('Authorization');
+const validation = await validateServerToken(authToken, env);
+if (!validation.isValid) {
+return new Response(JSON.stringify(validation.response), {
+status: validation.status,
+headers: { 'Content-Type': 'application/json' }
+});
+}
+const { userId, links, categories } = await request.json();
+await env.CARD_ORDER.put(userId, JSON.stringify({ links, categories }));
+return new Response(JSON.stringify({
+success: true,
+message: '保存成功'
+}), {
+status: 200,
+headers: { 'Content-Type': 'application/json' }
+});
+}
+if (url.pathname === '/api/verifyPassword' && request.method === 'POST') {
+try {
+const { password } = await request.json();
+const isValid = password === env.ADMIN_PASSWORD;
+if (isValid) {
+// 生成包含时间戳的加密 token
+const timestamp = Date.now();
+const tokenData = timestamp + "_" + env.ADMIN_PASSWORD;
+const encoder = new TextEncoder();
+const data = encoder.encode(tokenData);
+const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+// 使用指定格式：timestamp.hash
+const token = timestamp + "." + btoa(String.fromCharCode(...new Uint8Array(hashBuffer)));
+return new Response(JSON.stringify({
+valid: true,
+token: token
+}), {
+status: 200,
+headers: { 'Content-Type': 'application/json' }
+});
+}
+return new Response(JSON.stringify({
+valid: false,
+error: 'Invalid password'
+}), {
+status: 403,
+headers: { 'Content-Type': 'application/json' }
+});
+} catch (error) {
+return new Response(JSON.stringify({
+valid: false,
+error: error.message
+}), {
+status: 500,
+headers: { 'Content-Type': 'application/json' }
+});
+}
+}
+if (url.pathname === '/api/backupData' && request.method === 'POST') {
+const { sourceUserId } = await request.json();
+const result = await this.backupData(env, sourceUserId);
+return new Response(JSON.stringify(result), {
+status: result.success ? 200 : 404,
+headers: { 'Content-Type': 'application/json' }
+});
+}
+return new Response('Not Found', { status: 404 });
+},
+async backupData(env, sourceUserId) {
+const MAX_BACKUPS = 10;
+const sourceData = await env.CARD_ORDER.get(sourceUserId);
+if (sourceData) {
+try {
+const currentDate = new Date().toLocaleString('zh-CN', {
+timeZone: 'Asia/Shanghai',
+year: 'numeric',
+month: '2-digit',
+day: '2-digit',
+hour: '2-digit',
+minute: '2-digit',
+second: '2-digit',
+hour12: false
+}).replace(/\//g, '-');
+const backupId = `backup_${currentDate}`;
+const backups = await env.CARD_ORDER.list({ prefix: 'backup_' });
+const backupKeys = backups.keys.map(key => key.name).sort((a, b) => {
+const timeA = new Date(a.split('_')[1].replace(/-/g, '/')).getTime();
+const timeB = new Date(b.split('_')[1].replace(/-/g, '/')).getTime();
+return timeB - timeA; // 降序排序，最新的在前
+});
+await env.CARD_ORDER.put(backupId, sourceData);
+const allBackups = [...backupKeys, backupId].sort((a, b) => {
+const timeA = new Date(a.split('_')[1].replace(/-/g, '/')).getTime();
+const timeB = new Date(b.split('_')[1].replace(/-/g, '/')).getTime();
+return timeB - timeA;
+});
+const backupsToDelete = allBackups.slice(MAX_BACKUPS);
+if (backupsToDelete.length > 0) {
+await Promise.all(
+backupsToDelete.map(key => env.CARD_ORDER.delete(key))
+);
+}
+return {
+success: true,
+backupId,
+remainingBackups: MAX_BACKUPS,
+deletedCount: backupsToDelete.length
+};
+} catch (error) {
+return {
+success: false,
+error: 'Backup operation failed',
+details: error.message
+};
+}
+}
+return { success: false, error: 'Source data not found' };
+}
 };

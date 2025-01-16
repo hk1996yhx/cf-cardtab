@@ -988,8 +988,7 @@ const HTML_CONTENT = `
             },
 
             logAction(action, details) {
-                const timestamp = new Date().toISOString();
-                // console.log(`${ timestamp }: ${ action } - ${ JSON.stringify(details) } `);
+                const timestamp = new Date().toISOString(); 
             }
         };
 
